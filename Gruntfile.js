@@ -1,23 +1,33 @@
 module.exports = function(grunt) {
 
-    // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
-            build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
-            }
+      cssmin: {
+          my_target: {
+            files: [{
+              expand: true,
+              cwd: 'dist/',
+              src: ['weather.css', '!*.min.css'],
+              dest: 'dist/',
+              ext: '.min.css'
+            }]
+          }
+        },
+
+    stylus: {
+      compile: {
+        options: {
+          // paths: ['path/to/import', 'another/to/import'],
+        },
+        files: {
+          'dist/weather.css': 'static/**/*.styl' // 1:1 compile
         }
+      }
+    }
     });
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
 
-    // Default task(s).
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['stylus', 'cssmin']);
 
 };
