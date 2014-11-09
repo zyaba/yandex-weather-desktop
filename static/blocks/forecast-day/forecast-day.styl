@@ -1,10 +1,24 @@
 .forecast-day {
-	padding-right: 0px;
+	width: 107px;
+	padding: 0px;
 	font-family: Arial, sans-serif;
-
-	&__header {
+	leftpad(){
+		padding-left: 8px;
+	}
+	header(fontcolor){
+		color: fontcolor;
 		font-size: 22pt;
-		color: black;
+		line-height: 22pt;
+	}
+	&__header {
+		header(#000000);
+	}
+	&__header-date {
+		font-size: 13pt;
+		line-height: 13pt;
+	}
+	&__header-weekend{
+		header(#ff0000);
 	}
 	icon(weather-icon){
 		width: 48px;
@@ -16,7 +30,8 @@
 	}
 	color-body(fontsize, bgcolor) {
 		font-size: fontsize;
-		background-color: bgcolor
+		background-color: bgcolor;
+		leftpad();
 	}
 	&__body {
 		color-body(16pt, #f5f2d9);
@@ -24,7 +39,14 @@
 	&__body-warm{
 		color-body(16pt, #f8f4d0);
 	}
+	&__body-desc{
+		font-size: 10pt;
+		height: 50px;
+	}
 	&__footer {
-		color-body(13pt, #f3f1e3)
+		color-body(13pt, #f3f1e3);
+		color: #6d6e6e;
+		height: 29px;
+		line-height: 29px;
 	}
 }
