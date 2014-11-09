@@ -59,7 +59,19 @@ module.exports = function (grunt) {
             myFiles: ['static/**/*.js']
         },
 
-        clean: ['dist/temp/']
+        clean: ['dist/temp/'],
+        
+        shell: {
+            server: {
+                options: {
+                    stdout: true
+                },
+                command: [
+                    'cd server',
+                    'node server'
+                ].join('&&')
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -67,6 +79,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.registerTask('default', ['stylus', 'autoprefixer', 'cssmin', 'clean']);
 
@@ -74,5 +87,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-jscs");
 
     grunt.registerTask('process_js', ['jscs', 'jshint'] );
-
+    
+    /* Start Express server */
+    grunt.registerTask('express', ['shell']);
+        
 };
