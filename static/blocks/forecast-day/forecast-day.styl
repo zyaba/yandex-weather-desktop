@@ -1,13 +1,30 @@
 .forecast-day {
+	padding-right: 0px;
+	font-family: Arial, sans-serif;
+
 	&__header {
-		position: relative;
-		border: 1px dashed red;
+		font-size: 22pt;
+		color: black;
+	}
+	icon(weather-icon){
+		width: 48px;
+		height: 48px;
+		background-image: url(weather-icon);
+	}
+	&__icon-ovc {
+		icon('http://ekb.shri14.ru/icons/ovc.svg');
+	}
+	color-body(fontsize, bgcolor) {
+		font-size: fontsize;
+		background-color: bgcolor
 	}
 	&__body {
-		border: 1px solid red;
+		color-body(16pt, #f5f2d9);
+	}
+	&__body-warm{
+		color-body(16pt, #f8f4d0);
 	}
 	&__footer {
-		color: red;
-		border: 1px solid black;
+		color-body(13pt, #f3f1e3)
 	}
 }
