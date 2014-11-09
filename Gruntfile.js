@@ -59,7 +59,19 @@ module.exports = function (grunt) {
             myFiles: ['static/**/*.js']
         },
 
-        clean: ['dist/temp/']
+        clean: ['dist/temp/'],
+        
+        shell: {
+            server: {
+                options: {
+                    stdout: true
+                },
+                command: [
+                    'cd server',
+                    'node server'
+                ].join('&&')
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -74,5 +86,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-jscs");
 
     grunt.registerTask('process_js', ['jscs', 'jshint'] );
-
+    
+    /* Start Express server */
+    require('load-grunt-tasks')(grunt);
+    grunt.registerTask('express', ['shell']);
+        
 };
