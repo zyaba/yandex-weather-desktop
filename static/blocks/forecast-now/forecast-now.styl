@@ -1,0 +1,110 @@
+.forecast-now {
+	font-family: Arial, Helvetica, sans-serif;
+	
+	&__city {
+		font-size: 22px;
+		font-weight: 400;
+		margin-right: 16px;
+		display: inline-block;
+	}
+}
+
+.b-weather-main {
+	font-family: Arial, Helvetica, sans-serif;
+	height: 99px;		
+
+	&__now {
+		width: 154px;
+		background-color: #fae5aa;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	&__later {
+		width: 70px;
+		background-color: #fae5aa;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	&__when--now {
+		font-size: 18px;
+	}
+
+	&__when--later {
+		font-size: 13px;
+		color: #6d6e6e;
+		padding-left: 10px;
+	}
+
+	&__temp {
+		font-size: 27px;
+	}
+
+	&__icon {
+		width: 51px;
+		height: 39px;
+		display: inline-block;
+		vertical-align: top;
+		background-repeat: no-repeat;
+
+		&--cloudy {
+			@extend .b-weather-main__icon
+			background-image: url('images/cloudy.png');
+		}
+
+		&--rainy{
+			@extend .b-weather-main__icon
+			background-image: url('images/rainy.png');
+		}
+
+		&--wind {
+			@extend .b-weather-main__icon
+			background-image: url('images/wind.png');
+		}
+
+		&--snow {
+			@extend .b-weather-main__icon
+			background-image: url('images/snow.png');
+		}
+	}
+
+	&__status {
+		font-size: 11px;
+		vertical-align: top;
+	}
+}
+
+.b-weather-main__later .b-weather-main__when {
+	font-size: 13px;
+	color: #6d6e6e;
+	line-height: 21px;
+}
+
+.b-weather-main__later .b-weather-main__temp {
+	font-size: 16px;
+	line-height: 35px;
+}
+
+.b-yesterday {
+	&__text {
+		color: #6d6e6e;
+		font-size: 13px;
+	}
+}
+
+.b-additional {
+	color: #6d6e6e;
+	font-size: 13px;
+	float: left;
+	padding-top: 24px;
+	margin-left: 24px;
+}
+
+.b-additional__line {
+	margin: 0;
+}
+
+.b-additional__line:last-child {
+	margin-top: 10px;
+}
