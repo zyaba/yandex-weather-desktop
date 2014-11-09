@@ -1,6 +1,6 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-    grunt.initConfig({
+    grunt.initConfig({        
         stylus: {
           compile: {
             files: {
@@ -32,6 +32,22 @@ module.exports = function(grunt) {
           }
         },
 
+        jscs: {
+            src: "static/**/*.js",
+            options: {
+                config: true,
+                requireCurlyBraces: [ "if" ]
+            }
+        },
+
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc' // relative to Gruntfile
+            },
+            // You get to make the name
+            // The paths tell JSHint which files to validate
+            myFiles: ['static/**/*.js']
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -39,5 +55,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
 
     grunt.registerTask('default', ['stylus', 'autoprefixer', 'cssmin']);
+
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks("grunt-jscs");
+
+    grunt.registerTask('process_js', ['jscs', 'jshint'] );
 
 };
