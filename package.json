@@ -1,0 +1,31 @@
+{
+  "name": "weather",
+  "version": "0.0.0",
+  "description": "yandex weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yandex-shri-ekb-2014/team2.git"
+  },
+  "keywords": [
+    "yandex",
+    "weather",
+    "shri"
+  ],
+  "author": "team 2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yandex-shri-ekb-2014/team2/issues"
+  },
+  "homepage": "https://github.com/yandex-shri-ekb-2014/team2",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concat-css": "^0.3.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-stylus": "^0.20.0"
+  }
+}
