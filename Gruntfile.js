@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         stylus: {
             compile: {
                 files: {
-                    "dist/temp/temp.css": "static/**/*.styl"
+                    "dist/temp/temp.css": ['static/blocks/design.styl', 'static/**/*.styl']
                 }
             }
         },
@@ -85,6 +85,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-jscs");
+
 
     grunt.registerTask("process_js", ["jscs", "jshint"]);
 
