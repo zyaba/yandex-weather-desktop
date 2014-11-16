@@ -1,18 +1,18 @@
 module.exports = function (grunt) {
 
-    grunt.initConfig({        
+    grunt.initConfig({
         stylus: {
-          compile: {
-            files: {
-              "dist/temp/temp.css": "static/**/*.styl"
+            compile: {
+                files: {
+                    "dist/temp/temp.css": "static/**/*.styl"
+                }
             }
-          }
         },
 
         autoprefixer: {
             single_file: {
                 options: {
-                  browsers: ["> 1%", "last 2 versions", "Firefox ESR", "Opera 12.1", "ie 8", "ie 9"]
+                    browsers: ["> 1%", "last 2 versions", "Firefox ESR", "Opera 12.1", "ie 8", "ie 9"]
                 },
 
                 src: "dist/temp/temp.css",
@@ -21,24 +21,24 @@ module.exports = function (grunt) {
         },
 
         cssmin: {
-          my_target: {
-            files: [{
-              expand: true,
-              cwd: "dist/temp/",
-              src: ["weather.css", "!*.min.css"],
-              dest: "dist/",
-              ext: ".min.css"
+            my_target: {
+                files: [{
+                    expand: true,
+                    cwd: "dist/temp/",
+                    src: ["weather.css", "!*.min.css"],
+                    dest: "dist/",
+                    ext: ".min.css"
             }]
-          }
+            }
         },
 
         watch: {
             options: {
-              reload: true
+                reload: true
             },
             src: {
-              files: ["static/**/*.styl"],
-              tasks: ["default"],
+                files: ["static/**/*.styl"],
+                tasks: ["default"],
             }
         },
 
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             src: "static/**/*.js",
             options: {
                 config: true,
-                requireCurlyBraces: [ "if" ]
+                requireCurlyBraces: ["if"]
             }
         },
 
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
         },
 
         clean: ["dist/temp/"],
-        
+
         shell: {
             server: {
                 options: {
@@ -86,9 +86,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-jscs");
 
-    grunt.registerTask("process_js", ["jscs", "jshint"] );
-    
+    grunt.registerTask("process_js", ["jscs", "jshint"]);
+
     /* Start Express server */
     grunt.registerTask("express", ["shell"]);
-        
+
 };
