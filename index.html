@@ -1,159 +1,195 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="dist/weather.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="dist/weather.min.css" media="screen" />
 
-  <title>Yandex Weather</title>
+    <title>Yandex Weather</title>
 </head>
+
 <body>
+    <div class="forecast-navigator">
+        <h3 class="forecast-now__city">Екатерибург</h3>
+        <div id="select__choose-city" class="select__dropdown">
+            <span class="select__text">Другой город</span>
+        </div>
+    </div>
+    
+    <table class="b-weather-main">
+        <tr>
+            <td class="b-weather-main__when--now">сейчас</td>
+            <td class="b-weather-main__when--later">днем</td>
+            <td class="b-weather-main__when--later">вечером</td>
+            <td class="b-weather-main__when--later">ночью</td>
+        </tr>
+        <tr>
+            <td class="b-weather-main__now">
+                <table>
+                    <tr>
+                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+                    </tr>
+                    <tr>
+                        <td class="b-weather-main__icon--cloudy"></td>
+                        <td class="b-weather-main__status">малооблачно</td>
+                    </tr>
+                </table>
+            </td>
+            <td class="b-weather-main__later">
+                <table>
+                    <tr>
+                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+                    </tr>
+                    <tr>
+                        <td class="b-weather-main__icon--rainy"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="b-weather-main__later">
+                <table>
+                    <tr>
+                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+                    </tr>
+                    <tr>
+                        <td class="b-weather-main__icon--wind"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="b-weather-main__later">
+                <table>
+                    <tr>
+                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+                    </tr>
+                    <tr>
+                        <td class="b-weather-main__icon--snow"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="b-additional">
+                <p class="b-additional__line">Давление: 735 мм рт. ст.</p>
+                <p class="b-additional__line">Ветер: северо-восточный, 2.7 м/с (9.7 км/ч)</p>
+                <p class="b-additional__line">Влажность: 72%</p>
+                <p class="b-additional__line">Восход: 06:36 Заход: 21:24</p>
+                <p class="b-additional__line">Данные зарегистрированы недавно</p>
+            </td>
+        </tr>
+    </table>
+    
+    <div class="b-yesterday">
+        <span class="b-yesterday__text">вчера +10 °C</span>
+    </div>
 
-  <div class="forecast-navigator">
-    <h3 class="forecast-now__city">Екатерибург</h3>
-    <div id="select__choose-city" class="select__dropdown">
-      <span class="select__text">Другой город</span>
+<div style="margin: 50px;">
+    <div class="tabs">
+        <button class="tabs--item">кратко</button>
+        <button class="tabs--item tabs--item__active">подробно</button>
+        <button class="tabs--item">наглядно</button>
     </div>
-  </div>
-  <table class="b-weather-main">
-    <tr>
-      <td class="b-weather-main__when--now">сейчас</td>
-      <td class="b-weather-main__when--later">днем</td>
-      <td class="b-weather-main__when--later">вечером</td>
-      <td class="b-weather-main__when--later">ночью</td>
-    </tr>
-    <tr>
-      <td class="b-weather-main__now">
-        <table>
-          <tr>
-            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-          </tr>
-          <tr>
-            <td class="b-weather-main__icon--cloudy"></td>
-            <td class="b-weather-main__status">малооблачно</td>
-          </tr>
-        </table>
-      </td>
-      <td class="b-weather-main__later">
-        <table>
-          <tr>
-            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-          </tr>
-          <tr>
-            <td class="b-weather-main__icon--rainy"></td>
-          </tr>
-        </table>
-      </td>
-      <td class="b-weather-main__later">
-        <table>
-          <tr>
-            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-          </tr>
-          <tr>
-            <td class="b-weather-main__icon--wind"></td>
-          </tr>
-        </table>
-      </td>
-      <td class="b-weather-main__later">
-        <table>
-          <tr>
-            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-          </tr>
-          <tr>
-            <td class="b-weather-main__icon--snow"></td>
-          </tr>
-        </table>
-      </td>
-      <td class="b-additional">
-        <p class="b-additional__line">Давление: 735 мм рт. ст.</p>
-        <p class="b-additional__line">Ветер: северо-восточный, 2.7 м/с (9.7 км/ч)</p>
-        <p class="b-additional__line">Влажность: 72%</p>
-        <p class="b-additional__line">Восход: 06:36 Заход: 21:24</p>
-        <p class="b-additional__line">Данные зарегистрированы недавно</p> 
-      </td>
-    </tr>
-  </table>
-  <div class="b-yesterday">
-    <span class="b-yesterday__text">вчера +10 °C</span>
-  </div>
+</div>
+   
+    <div class="forecast-short">
 
- <div class="forecast-short">
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body-warm">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header-weekend">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header-weekend">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
 
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body-warm">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
     </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header-weekend">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header-weekend">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-      
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-  </div>
 </body>
-</html> 
+
+</html>
