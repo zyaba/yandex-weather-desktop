@@ -38,7 +38,7 @@ module.exports = function (grunt) {
             },
             src: {
               files: ['static/**/*.styl'],
-              tasks: ['default'],
+              tasks: ['default']
             }
         },
 
@@ -87,8 +87,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-jscs");
 
     grunt.registerTask('process_js', ['jscs', 'jshint'] );
-    
-    /* Start Express server */
     grunt.registerTask('express', ['shell']);
         
 };

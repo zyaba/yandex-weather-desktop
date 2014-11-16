@@ -1,0 +1,171 @@
+////////////
+// HEADER
+////////////
+
+.header {
+    width: 100%;
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.header__logo {
+    float: left;
+}
+
+.section-link {
+    text-decoration: none;
+    color: #000;
+    padding: 0 7px 0 12px;
+    display: block;
+    background-color: #FFF;
+    z-index: 1000;
+    position: relative;
+
+    &:hover {
+        color: #F00;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        right: -8px;
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FC0;
+        border-width: 17px 0 17px 9px;
+        border-style: solid;
+        top: -3px;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        top: -1px;
+        right: -6px;
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FFF;
+        border-width: 15px 0 15px 8px;
+        border-style: solid;
+        -moz-border-end-style: dotted;
+        z-index: 1;
+    }
+}
+
+//////////
+// CITY SEARCH FORM
+//////////
+    
+.city-search__submit {
+    float: left;
+}
+
+.city-search__section-link-wrapper {
+    font-size: 16px;
+    height: 28px;
+    line-height: 28px;
+    border: 2px solid #FFCA00;
+    width: 77px;
+    border-right-style: none;
+}
+
+.city-search__section-link-wrapper,
+.city-search__label-triangle,
+.city-search__label-wrapper,
+.city-search__actions-wrapper,
+.header__section {
+    float: left;
+}
+
+.header__city-search-wrapper {
+    padding: 5px 15px 5px;
+    width: 50%;
+}
+
+.city-search__actions-wrapper {
+    position relative;
+}
+
+.city-search__input {
+    border: 1px solid #A6A6A6;
+    height: 28px;
+    min-width 180px;
+
+    border-left-style: none;
+
+    padding-left: 15px;
+    font-size: 15px;
+    outline: none;
+    padding-right: 32px;
+
+    &:focus {
+        box-shadow: 0 0 6px 2px rgba(255, 204, 0, 0.7);
+    }
+}
+
+.city-search__clear-btn {
+    background: url(http://market.yandex.ru/_/K4e4uv8u9I9wb1fi17d8-3Jnr2A.svg) 50% 50% no-repeat;
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity .3;
+
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.city-search__submit-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #A6A6A6;
+    border-left-style: none;
+    height: 32px;
+    width: 72px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 0 3px 3px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+//////////
+// ACCOUNT SECTION
+//////////
+
+.header__account-wrapper {
+    float: right;
+}
+
+.header__user-avatar-wrapper {
+    display: inline-block;
+}
+
+.header__user-avatar {
+    border-radius: 50%;
+    border: 1px solid #DFDFDF;
+    width: 43px;
+}
+
+.header__user-name-wrapper {
+    display: inline-block;
+    padding: 12px;
+}
+
+.user-name__first-letter {
+    color: red;
+    float: left;
+}
+
+.user-name__rest-letters {
+    float: left;
+}
