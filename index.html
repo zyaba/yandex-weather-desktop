@@ -10,7 +10,75 @@
   <title>Yandex Weather</title>
 </head>
 <body>
-  <div class="forecast-short">
+  <div class="forecast-navigator">
+    <h3 class="forecast-now__city">Екатерибург</h3>
+    <div id="select__choose-city" class="select__dropdown">
+      <span class="select__text">Другой город</span>
+    </div>
+  </div>
+  <table class="b-weather-main">
+    <tr>
+      <td class="b-weather-main__when--now">сейчас</td>
+      <td class="b-weather-main__when--later">днем</td>
+      <td class="b-weather-main__when--later">вечером</td>
+      <td class="b-weather-main__when--later">ночью</td>
+    </tr>
+    <tr>
+      <td class="b-weather-main__now">
+        <table>
+          <tr>
+            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+          </tr>
+          <tr>
+            <td class="b-weather-main__icon--cloudy"></td>
+            <td class="b-weather-main__status">малооблачно</td>
+          </tr>
+        </table>
+      </td>
+      <td class="b-weather-main__later">
+        <table>
+          <tr>
+            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+          </tr>
+          <tr>
+            <td class="b-weather-main__icon--rainy"></td>
+          </tr>
+        </table>
+      </td>
+      <td class="b-weather-main__later">
+        <table>
+          <tr>
+            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+          </tr>
+          <tr>
+            <td class="b-weather-main__icon--wind"></td>
+          </tr>
+        </table>
+      </td>
+      <td class="b-weather-main__later">
+        <table>
+          <tr>
+            <td colspan="2" class="b-weather-main__temp">+30 °C</td>
+          </tr>
+          <tr>
+            <td class="b-weather-main__icon--snow"></td>
+          </tr>
+        </table>
+      </td>
+      <td class="b-additional">
+        <p class="b-additional__line">Давление: 735 мм рт. ст.</p>
+        <p class="b-additional__line">Ветер: северо-восточный, 2.7 м/с (9.7 км/ч)</p>
+        <p class="b-additional__line">Влажность: 72%</p>
+        <p class="b-additional__line">Восход: 06:36 Заход: 21:24</p>
+        <p class="b-additional__line">Данные зарегистрированы недавно</p> 
+      </td>
+    </tr>
+  </table>
+  <div class="b-yesterday">
+    <span class="b-yesterday__text">вчера +10 °C</span>
+  </div>
+
+  <div class="forecast-short" style="display:none">
     <div class="forecast-day">
       <div class="forecast-day__header">пн<br />11</div>
       <div class="forecast-day__body">

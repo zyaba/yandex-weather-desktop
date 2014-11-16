@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         stylus: {
           compile: {
             files: {
-              'dist/temp/temp.css': 'static/**/*.styl'
+              'dist/temp/temp.css': ['static/blocks/design.styl', 'static/**/*.styl']
             }
           }
         },
