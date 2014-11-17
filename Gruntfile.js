@@ -59,7 +59,7 @@ module.exports = function (grunt) {
             myFiles: ["static/**/*.js"]
         },
 
-        clean: ["dist/temp/"],
+        clean: ["dist/temp/", "!dist/images/"],
 
         shell: {
             server: {
