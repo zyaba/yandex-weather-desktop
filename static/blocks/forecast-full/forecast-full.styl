@@ -1,0 +1,141 @@
+.forecast-full {    
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 960px;
+    font-size: 13px;
+    margin-top: 20px;
+    
+    &:first-child {
+        margin-top: 30px;
+    }
+        
+    &__title {
+        font-size: 11px;
+        color: #666;
+        margin-bottom: 6px;
+        line-height: 1.1em;
+    }
+    
+    &__date {
+        flex: 1 9%;
+        max-width: 80px;
+        
+        &__weekday {
+            float: left;
+        }
+        
+        &__monthday {
+            margin: 3px 0 0 23px;
+            
+            &__day {
+                font-size: 36px;
+                line-height: 0.9em;
+            }
+            &__month {
+            }
+        }
+        
+        &_holiday {
+            color: #FF0204;
+        }
+    }
+    
+    &__weather {
+        flex: 1 59.5%;
+        padding: 0 10px;
+        
+        &__header,
+        &__item {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        
+        &__header {
+            margin-top: -30px;
+            height: 30px;
+            align-items: flex-end;
+            
+            .forecast-full__title {
+                margin-bottom: 3px;
+            }
+            .forecast-full__weather__wind {                
+                .forecast-full__title {
+                    margin-left: 24px;
+                }
+            }
+        }
+        
+        &__item {
+            margin-bottom: 1px;
+            height: 52px;
+            line-height: 52px;
+            align-items: stretch;
+            background: #E5E5E5;
+        }
+        
+        &__degree {
+            flex: 1 50px;
+            position: relative;
+            padding: 0 10px;
+            font-size: 16px;
+            max-width: 80px;
+            
+            .forecast-full__title {
+                position: absolute;
+                left: 10px;
+                top: 2px;
+                margin: 0;
+            }
+        }
+        
+        &__precipitation {
+            flex: 1 244px;
+            
+            &__icon {
+                vertical-align: middle;
+                margin-right: 15px;
+                margin-bottom: 2px;
+            }
+        }
+        
+        &__pressure {
+            flex: 1 60px;
+        }
+        
+        &__humidity {
+            flex: 1 70px;
+        }
+        
+        &__wind {
+            flex: 1 90px;
+            
+            &__icon {
+                margin: 10px 0 0 0;
+                vertical-align: top;
+            }
+        }
+    }
+    
+    &__sunrise {
+        flex: 1 6%;
+        text-align: center;
+    }
+    
+    &__sunset {
+        flex: 1 5.5%;
+        text-align: center;
+    }
+    
+    &__moon {
+        flex: 1 5%;
+        text-align: center;
+        
+        &__icon {
+            margin-top: 17px;
+        }
+    }
+    
+    &__magnetic {
+        flex: 1 15%;
+    }
+}
