@@ -13,7 +13,7 @@
 
   <div class="forecast-navigator">
     <h3 class="forecast-navigator__city">Екатерибург</h3>
-    <div id="select__city" class="select__dropdown">
+    <div data-for="select__city" class="select__dropdown">
       <span class="select__text">Другой город</span>
     </div>
   </div>
@@ -136,6 +136,27 @@
       </div>
       <div class="forecast-day__footer">+8</div>
     </div>
+  </div>
+
+  <div id="select__city" class="select__dropdown-content" style="top: 58px; left: 145px; display: none;">
+    <p class="select__dropdown-title">Последние города</p>
+    <ul class="select__dropdown-list">
+      <li class="select__dropdown-item--active">
+        <a href="#" class="select__dropdown-link">Екатеринбург</a>
+      </li>
+      <li class="select__dropdown-item">
+        <a href="#" class="select__dropdown-link">Киев</a></li>
+      <li class="select__dropdown-item">
+        <a href="#" class="select__dropdown-link">Окленд</a>
+      </li>
+    </ul>
+    <p class="select__dropdown-footer">
+      <a href="#" class="select__dropdown-link">Все города</a>
+    </p>
+  </div>
+
+  <div id="hint__forecast-base" class="hint__content" style="top: 198px; left: 524px; display: none;">
+    <p class="hint__text">На основе прогноза</p>
   </div>
 </body>
 </html> 

@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         stylus: {
             compile: {
                 files: {
-                    "dist/temp/temp.css": ['static/blocks/design.styl', 'static/**/*.styl']
+                    "dist/temp/temp.css": ['static/**/*.styl']
                 }
             }
         },
@@ -82,6 +82,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-shell");
 
     grunt.registerTask("default", ["stylus", "autoprefixer", "cssmin", "clean"]);
+    grunt.registerTask("watching", ["stylus", "autoprefixer", "cssmin", "clean", "watch"]);
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-jscs");
