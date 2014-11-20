@@ -1,16 +1,13 @@
 .forecast-hourly {
     height: 300px;
     position: relative;
-    font-size: 0;
     display: flex;
     justify-content: space-between;
     counter-reset: hour -1;
     min-width: 960px;
     
     &__item {
-        display: inline-block;
         position: relative;
-        vertical-align: top;
         flex: 1;
         margin: 20px 1px 50px;
         counter-increment: hour;
@@ -19,8 +16,6 @@
             width: 100%;
 			position: absolute;
 			transition: all 0.2s ease-in-out;
-            background: #eaeaea;
-            height: 20px;
             
             &__text {
                 text-align: center;
