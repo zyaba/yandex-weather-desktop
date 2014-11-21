@@ -10,38 +10,7 @@
         position: relative;
         flex: 1;
         margin: 20px 1px 50px;
-        counter-increment: hour;
-                        
-        &__bar {
-            width: 100%;
-			position: absolute;
-			transition: all 0.2s ease-in-out;
-            
-            &__text {
-                text-align: center;
-                position: absolute;
-                left: 0;
-                width: 100%;
-                font-size: 12px;
-                text-indent: -0.3em;
-            }
-            
-            &_plus {
-                bottom: 50%;
-            }
-            
-            &_plus &__text {
-                top: -20px;
-            }
-                
-            &_minus {
-                top: 50%;               
-            }
-            
-            &_minus &__text {
-                bottom: -20px;
-            }
-        }
+        counter-increment: hour;                       
         
         &:before {
             position: absolute;
@@ -55,5 +24,36 @@
             color: #999;
         }
     }
+    
+    &__bar {
+        width: 100%;
+        position: absolute;
+
+        &__text {
+            text-align: center;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            font-size: 12px;
+            text-indent: -0.3em;
+        }
+
+        &_plus {
+            bottom: 50%;
+        }
+
+        &_plus &__text {
+            top: -20px;
+        }
+
+        &_minus {
+            top: 50%;               
+        }
+
+        &_minus &__text {
+            bottom: -20px;
+        }
+    }
+
     
 }
