@@ -1,0 +1,21 @@
+<html>
+    <head lang="en">
+        <title>Yandex Weather</title>
+
+        <meta charSet="UTF-8"/>
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../static/blocks/GeoAPI/GeoAPI.js"></script>
+        <script>
+        
+GeoAPI.getGeoId().then(function(id) {
+    var id = id ? id : 1;
+    window.location = "/" + id;
+});
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
