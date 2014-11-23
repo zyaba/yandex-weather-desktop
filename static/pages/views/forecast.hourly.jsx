@@ -2,7 +2,7 @@
 var ForecastHourly = React.createClass({
     render: function() {
         return (
-            <div style={{"margin": "30px"}}>
+            <div style={{"margin": "30px", "display": "none"}}>
                 <div className="forecast-hourly">
                     <div className="forecast-hourly__item">
                         <div className="forecast-hourly__bar forecast-hourly__bar_plus" style={{"height": "50%", "background": "#ffc045"}}><div className="forecast-hourly__text">+60</div></div>
