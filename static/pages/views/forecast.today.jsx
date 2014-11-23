@@ -9,7 +9,7 @@ var ForecastToday = React.createClass({
                     <span className="weather-main__when">сегодня</span>
                     <div className="weather-main__forecast">
                         <span className="weather-main__degree">{this.props.apiData.fact.temp} °C</span>
-                        <div className="weather-main__icon"></div>
+                        <div className="weather-main__icon" style={{"background-image": "url(http://ekb.shri14.ru/icons/" + this.props.apiData.forecast[0].parts[0].weather_icon + ".svg)"}}></div>
                         <span className="weather-main__condensation">{this.props.apiData.fact.weather}</span>
                     </div>
                 </div>
@@ -17,21 +17,21 @@ var ForecastToday = React.createClass({
                     <span className="weather-main__when">днем</span>
                     <div className="weather-main__forecast">
                         <span className="weather-main__degree">{this.props.apiData.forecast[0].parts[1].temp} °C</span>
-                        <div className="weather-main__icon"></div>
+                        <div className="weather-main__icon" style={{"background-image": "url(http://ekb.shri14.ru/icons/" + this.props.apiData.forecast[0].parts[1].weather_icon + ".svg)"}}></div>
                     </div>
                 </div>
                 <div className="weather-main__container">
                     <span className="weather-main__when">вечером</span>
                     <div className="weather-main__forecast">
                         <span className="weather-main__degree">{this.props.apiData.forecast[0].parts[2].temp} °C</span>
-                        <div className="weather-main__icon"></div>
+                        <div className="weather-main__icon" style={{"background-image": "url(http://ekb.shri14.ru/icons/" + this.props.apiData.forecast[0].parts[2].weather_icon + ".svg)"}}></div>
                     </div>
                 </div>
                 <div className="weather-main__container">
                     <span className="weather-main__when">ночью</span>
                     <div className="weather-main__forecast">
                         <span className="weather-main__degree">{this.props.apiData.forecast[0].parts[3].temp} °C</span>
-                        <div className="weather-main__icon"></div>
+                        <div className="weather-main__icon" style={{"background-image": "url(http://ekb.shri14.ru/icons/" + this.props.apiData.forecast[0].parts[3].weather_icon + ".svg)"}}></div>
                     </div>
                 </div>
                 <div className="weather-main__additional">

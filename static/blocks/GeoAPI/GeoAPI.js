@@ -9,8 +9,7 @@ var GeoAPI = (function () {
                     if (position && position.coords) {
                         $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
                             promise.resolve(data.geoid);
-                        }).fail(function(error) {promise.reject(error)}); 
-
+                        }).fail(function(error) {promise.reject(error)});
                     }
 
                 }, function(error) {
@@ -23,5 +22,5 @@ var GeoAPI = (function () {
             
             return promise.promise();
         }
-    }
-})()
+    };
+})();
