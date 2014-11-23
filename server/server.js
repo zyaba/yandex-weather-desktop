@@ -1,15 +1,12 @@
 var express = require("express"),
-    http = require("http");
+    app = express();
 
-var app = express(); 
-var server = http.createServer(app);
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
 
-app.use("/", express.static(__dirname + "/../"));
 app.use("/dist", express.static(__dirname + "/../dist"));
+app.use("/bower_components", express.static(__dirname + "/../bower_components"));
 
-app.get("/", function(req, res){
-    //res.send('hello world');
-    res.sendFile("index.html");
-});
+app.get('/', require('./routes').index);
 
 app.listen(8080);
