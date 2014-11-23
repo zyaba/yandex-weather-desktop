@@ -2,13 +2,15 @@ var GeoAPI = (function () {
     
     return {
         getGeoId: function() {
-            var promise = new Promise(function(resolve/*, reject*/) {                
+            var promise = new Promise(function(resolve, reject) {                
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {                
                         if (position && position.coords) {
-                            $.get( '/locality', { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
-                                resolve(data);
-                            });
+                            $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
+                                console.log(data)
+                                resolve(data.geoid);
+                            }).fail(function(error) {reject(error)}); 
+                            
                         }
 
                     }, function(error) {
@@ -36,9 +38,5 @@ var GeoAPI = (function () {
             return promise;
             
         }
-    };
-})();
-
-GeoAPI.getGeoId().then(function(id) {
-    console.log(id);
-});
+    }
+})()
