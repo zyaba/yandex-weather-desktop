@@ -6,10 +6,10 @@ var GeoAPI = (function () {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {                
                         if (position && position.coords) {
-                            $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
-                                console.log(data)
+                            $.get( '/locality', { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
+                                console.log(data);
                                 resolve(data.geoid);
-                            }).fail(function(error) {reject(error)}); 
+                            }).fail(function(error) {reject(error);}); 
                             
                         }
 
@@ -38,5 +38,5 @@ var GeoAPI = (function () {
             return promise;
             
         }
-    }
-})()
+    };
+})();
