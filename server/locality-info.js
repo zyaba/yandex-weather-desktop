@@ -1,8 +1,6 @@
 var request = require('request'),
 	config = require('./config');
 
-var request = require('request');
-
 function getInfo(geoid, callback) {
 	var uri = url.format({
 	    protocol: 'http',
