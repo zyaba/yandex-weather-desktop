@@ -18,6 +18,6 @@ function getProvinces(geoid, callback) {
 			    callback(data);
 		}
 	});
-};
+}
 
 module.exports = getProvinces;
