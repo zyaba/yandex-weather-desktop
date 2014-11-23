@@ -1,3 +1,3 @@
 module.exports = {
-	uri: 'http://ekb.shri14.ru/api/'
+	uri: 'ekb.shri14.ru/api/'
 };

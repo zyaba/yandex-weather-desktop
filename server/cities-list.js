@@ -2,7 +2,11 @@ var request = require('request'),
 	config = require('./config');
 
 function getCities(geoid, callback) {
-	var uri = path.join(config.uri, 'localities', geoid, '/cities');
+	var uri = url.format({
+	    protocol: 'http',
+	    hostname: config.uri,
+	    pathname: 'localities' + geoid + 'cities'
+	});
 
 	request.get(
 		{

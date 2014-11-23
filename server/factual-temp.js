@@ -4,7 +4,15 @@ var request = require('request'),
 var request = require('request');
 
 function getTemp(array, callback) {
-	var uri = path.join(config.uri, '/factual?ids=', array.join(','));
+	array = array.join(',');
+	var uri = url.format({
+	    protocol: 'http',
+	    hostname: config.uri,
+	    pathname: 'factual',
+	    query: {
+	        ids: array
+	    }
+	});
 
 	request.get(
 		{

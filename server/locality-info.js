@@ -4,7 +4,11 @@ var request = require('request'),
 var request = require('request');
 
 function getInfo(geoid, callback) {
-	var uri = path.join(config.uri, '/localities/', geoid);
+	var uri = url.format({
+	    protocol: 'http',
+	    hostname: config.uri,
+	    pathname: 'localities/' + geoid
+	});
 
 	request.get(
 		{
