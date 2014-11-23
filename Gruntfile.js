@@ -82,7 +82,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-shell");
 
     grunt.registerTask("default", ["stylus", "autoprefixer", "cssmin", "clean"]);
-    grunt.registerTask("watching", ["stylus", "autoprefixer", "cssmin", "clean", "watch"]);
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-jscs");

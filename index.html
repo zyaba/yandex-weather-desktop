@@ -1,13 +1,14 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="dist/weather.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="dist/weather.min.css" media="screen" />
 
-  <title>Yandex Weather</title>
+    <title>Yandex Weather</title>
 </head>
 <body>
 
@@ -61,80 +62,247 @@
     </div>
   </div>
 
- <div class="forecast-short">
+<div style="margin: 50px;">
+    <div class="tabs">
+        <button class="tabs__item">кратко</button>
+        <button class="tabs__item tabs__item_active">подробно</button>
+        <button class="tabs__item">наглядно</button>
+    </div>
+</div>
 
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body-warm">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
+<div style="margin: 50px;">
+    <div class="forecast-full">
+        <div class="forecast-full__date">
+            <div class="forecast-full__date__weekday">вт</div>
+            <div class="forecast-full__date__monthday">
+                <div class="forecast-full__date__monthday__day">28</div>
+                <div class="forecast-full__date__monthday__month">октября</div>
+            </div>
+        </div>
+        <div class="forecast-full__weather">
+            <div class="forecast-full__weather__header">
+                <div class="forecast-full__weather__degree"></div>
+                <div class="forecast-full__weather__precipitation"></div>
+                <div class="forecast-full__weather__pressure">
+                    <div class="forecast-full__title">давление,<br/>мм&nbsp;рт.&nbsp;ст.</div>
+                </div>
+                <div class="forecast-full__weather__humidity">
+                    <div class="forecast-full__title">влажность</div>
+                </div>
+                <div class="forecast-full__weather__wind">
+                    <div class="forecast-full__title">ветер,<br/>м/с</div>
+                </div>
+            </div>
+            <div class="forecast-full__weather__item">
+                <div class="forecast-full__weather__degree">
+                    <div class="forecast-full__title">утром</div>
+                    <div>−5&hellip;−4</div>
+                </div>
+                <div class="forecast-full__weather__precipitation">
+                    <img class="forecast-full__weather__precipitation__icon" src="http://ekb.shri14.ru/icons/ovc.svg" width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
+                    облачно с прояснениями
+                </div>
+                <div class="forecast-full__weather__pressure">740</div>
+                <div class="forecast-full__weather__humidity">70%</div>
+                <div class="forecast-full__weather__wind"><img class="forecast-full__weather__wind__icon" src="http://yandex.st/weather/1.2.83/i/wind/w.gif" alt="" title="Ветер: западный"> 4.9</div>
+            </div>
+            <div class="forecast-full__weather__item">
+                <div class="forecast-full__weather__degree">
+                    <div class="forecast-full__title">утром</div>
+                    <div>−5&hellip;−4</div>
+                </div>
+                <div class="forecast-full__weather__precipitation">
+                    <img class="forecast-full__weather__precipitation__icon" src="http://ekb.shri14.ru/icons/ovc.svg" width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
+                    облачно с прояснениями
+                </div>
+                <div class="forecast-full__weather__pressure">740</div>
+                <div class="forecast-full__weather__humidity">70%</div>
+                <div class="forecast-full__weather__wind"><img class="forecast-full__weather__wind__icon" src="http://yandex.st/weather/1.2.83/i/wind/w.gif" alt="" title="Ветер: западный"> 4.9</div>
+            </div>
+            <div class="forecast-full__weather__item">
+                <div class="forecast-full__weather__degree">
+                    <div class="forecast-full__title">утром</div>
+                    <div>−5&hellip;−4</div>
+                </div>
+                <div class="forecast-full__weather__precipitation">
+                    <img class="forecast-full__weather__precipitation__icon" src="http://ekb.shri14.ru/icons/ovc.svg" width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
+                    облачно с прояснениями
+                </div>
+                <div class="forecast-full__weather__pressure">740</div>
+                <div class="forecast-full__weather__humidity">70%</div>
+                <div class="forecast-full__weather__wind"><img class="forecast-full__weather__wind__icon" src="http://yandex.st/weather/1.2.83/i/wind/sw.gif" alt="" title="Ветер: западный"> 4.9</div>
+            </div>
+        </div>
+        <div class="forecast-full__sunrise">
+            <div class="forecast-full__title">восход</div>
+            <div>07:57</div>
+        </div>
+        <div class="forecast-full__sunset">
+            <div class="forecast-full__title">заход</div>
+            <div>17:57</div>
+        </div>
+        <div class="forecast-full__moon">
+            <img class="forecast-full__moon__icon" src="http://ekb.shri14.ru/icons/icon_moon_7.svg" width="24" height="24" alt="Убывающая луна" title="Убывающая луна" />
+        </div>
+        <div class="forecast-full__magnetic">
+            <div class="forecast-full__title">магнитное поле:</div>
+            <div>слабо возмущенное</div>
+        </div>
     </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header-weekend">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
+    
+    <div class="forecast-full">
+        <div class="forecast-full__date forecast-full__date_holiday">
+            <div class="forecast-full__date__weekday">вт</div>
+            <div class="forecast-full__date__monthday">
+                <div class="forecast-full__date__monthday__day">29</div>
+                <div class="forecast-full__date__monthday__month">октября</div>
+            </div>
+        </div>
+        <div class="forecast-full__weather">
+            <div class="forecast-full__weather__item">
+                <div class="forecast-full__weather__degree">
+                    <div class="forecast-full__title">утром</div>
+                    <div>−5&hellip;−4</div>
+                </div>
+                <div class="forecast-full__weather__precipitation">
+                    <img class="forecast-full__weather__precipitation__icon" src="http://ekb.shri14.ru/icons/ovc.svg" width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
+                    облачно с прояснениями
+                </div>
+                <div class="forecast-full__weather__pressure">740</div>
+                <div class="forecast-full__weather__humidity">70%</div>
+                <div class="forecast-full__weather__wind"><img class="forecast-full__weather__wind__icon" src="http://yandex.st/weather/1.2.83/i/wind/w.gif" alt="" title="Ветер: западный"> 4.9</div>
+            </div>
+            <div class="forecast-full__weather__item">
+                <div class="forecast-full__weather__degree">
+                    <div class="forecast-full__title">утром</div>
+                    <div>−5&hellip;−4</div>
+                </div>
+                <div class="forecast-full__weather__precipitation">
+                    <img class="forecast-full__weather__precipitation__icon" src="http://ekb.shri14.ru/icons/ovc.svg" width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
+                    облачно с прояснениями
+                </div>
+                <div class="forecast-full__weather__pressure">740</div>
+                <div class="forecast-full__weather__humidity">70%</div>
+                <div class="forecast-full__weather__wind"><img class="forecast-full__weather__wind__icon" src="http://yandex.st/weather/1.2.83/i/wind/w.gif" alt="" title="Ветер: западный"> 4.9</div>
+            </div>
+            <div class="forecast-full__weather__item">
+                <div class="forecast-full__weather__degree">
+                    <div class="forecast-full__title">утром</div>
+                    <div>−5&hellip;−4</div>
+                </div>
+                <div class="forecast-full__weather__precipitation">
+                    <img class="forecast-full__weather__precipitation__icon" src="http://ekb.shri14.ru/icons/ovc.svg" width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
+                    облачно с прояснениями
+                </div>
+                <div class="forecast-full__weather__pressure">740</div>
+                <div class="forecast-full__weather__humidity">70%</div>
+                <div class="forecast-full__weather__wind"><img class="forecast-full__weather__wind__icon" src="http://yandex.st/weather/1.2.83/i/wind/w.gif" alt="" title="Ветер: западный"> 4.9</div>
+            </div>
+        </div>
+        <div class="forecast-full__sunrise">
+            <div class="forecast-full__title">восход</div>
+            <div>07:57</div>
+        </div>
+        <div class="forecast-full__sunset">
+            <div class="forecast-full__title">заход</div>
+            <div>17:57</div>
+        </div>
+        <div class="forecast-full__moon">
+            <img class="forecast-full__moon__icon" src="http://ekb.shri14.ru/icons/icon_moon_5.svg" width="24" height="24" alt="Убывающая луна" title="Убывающая луна" />
+        </div>
+        <div class="forecast-full__magnetic">
+            <div class="forecast-full__title">магнитное поле:</div>
+            <div>слабо возмущенное</div>
+        </div>
     </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header-weekend">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
-    </div>
-      
-    <div class="forecast-day">
-      <div class="forecast-day__header">пн<div class="forecast-day__header-date">11</div></div>
-      <div class="forecast-day__body">
-        <div class="forecast-day__icon-ovc"></div>
-        <div class="forecast-day__body-desc">облачно<br />с прояснениями</div>
-        <div>+25</div>
-      </div>
-      <div class="forecast-day__footer">+8</div>
+</div>  
+
+
+<div class="forecast-short">
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body-warm">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header-weekend">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header-weekend">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
+        <div class="forecast-day">
+            <div class="forecast-day__header">пн
+                <div class="forecast-day__header-date">11</div>
+            </div>
+            <div class="forecast-day__body">
+                <div class="forecast-day__icon-ovc"></div>
+                <div class="forecast-day__body-desc">облачно
+                    <br />с прояснениями</div>
+                <div>+25</div>
+            </div>
+            <div class="forecast-day__footer">+8</div>
+        </div>
     </div>
   </div>
 
@@ -159,4 +327,5 @@
     <p class="hint__text">На основе прогноза</p>
   </div>
 </body>
-</html> 
+
+</html>
