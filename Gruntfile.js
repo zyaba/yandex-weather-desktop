@@ -87,6 +87,10 @@ module.exports = function (grunt) {
                     "cd server",
                     "node server"
                 ].join("&&")
+            },
+            
+            hooks: {
+                command: "chmod +x .git/hooks/pre-commit"
             }
         }
     });
@@ -107,6 +111,7 @@ module.exports = function (grunt) {
     grunt.registerTask("process_js", ["jscs", "jshint"]);
     grunt.registerTask("setup", function() {
         grunt.file.copy('hooks/pre-commit', '.git/hooks/pre-commit');
+        grunt.task.run('shell:hooks')
     });
 
     /* Start Express server */
