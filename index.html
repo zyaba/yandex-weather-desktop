@@ -14,7 +14,7 @@
 
   <div class="forecast-navigator">
     <h3 class="forecast-navigator__city">Екатерибург</h3>
-    <div data-for="select__city" class="select__dropdown">
+    <div class="select">
       <span class="select__text">Другой город</span>
     </div>
   </div>
@@ -55,7 +55,7 @@
       <p class="weather-main__line">Влажность: 72%</p>
       <p class="weather-main__line--margin-5-bottom">Восход: 06:36 Заход: 21:24</p>
       <p class="weather-main__line">Данные зарегистрированы недавно</p>
-      <div class="hint"></div>
+      <div class="tip"></div>
     </div>
     <div class="weather-main__yesterday">
       вчера +10 °C
@@ -306,7 +306,7 @@
     </div>
   </div>
 
-  <div id="select__city" class="select__dropdown-content" style="top: 58px; left: 145px; display: none;">
+  <div class="select select__dropdown" style="top: 58px; left: 145px; display: none;">
     <p class="select__dropdown-title">Последние города</p>
     <ul class="select__dropdown-list">
       <li class="select__dropdown-item--active">
@@ -323,7 +323,7 @@
     </p>
   </div>
 
-  <div id="hint__forecast-base" class="hint__content" style="top: 198px; left: 524px; display: none;">
+  <div id="hint__forecast-base" class="hint" style="top: 198px; left: 524px; display: none;">
     <p class="hint__text">На основе прогноза</p>
   </div>
     <div style="margin: 30px;">
