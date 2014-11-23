@@ -1,5 +1,6 @@
 var request = require('request'),
-	config = require('./config');
+	config = require('./config'),
+	url = require('url');
 
 function getProvinces(geoid, callback) {
 	var uri = url.format({

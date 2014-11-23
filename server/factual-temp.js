@@ -1,5 +1,6 @@
 var request = require('request'),
-	config = require('./config');
+	config = require('./config'),
+	url = require('url');
 
 var request = require('request');
 
