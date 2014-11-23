@@ -6,7 +6,7 @@ var DefaultLayout = require('../layouts/default/main'),
     ForecastFull = require('./forecast.full'),
     ForecastShort = require('./forecast.short'),
     CityDropDown = require('./city.dropdown'),
-    //ForecastHourly = require('./forecast.hourly'),
+    ForecastHourly = require('./forecast.hourly'),
     DetailsMenu = require('./details.menu');
 
 var Index = React.createClass({
@@ -23,7 +23,8 @@ var Index = React.createClass({
                 <div id="hint__forecast-base" className="hint" style={{"top": "198px", "left": "524px", "display": "none"}}>
                     <p className="hint__text">На основе прогноза</p>
                 </div>
-                
+
+                <ForecastHourly></ForecastHourly>
             </DefaultLayout>
         );
     }
