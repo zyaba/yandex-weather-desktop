@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         stylus: {
             compile: {
                 files: {
-                    "dist/temp/temp.css": ['static/**/*.styl']
+                    "dist/temp/temp.css": ["static/**/*.styl"]
                 }
             }
         },
@@ -59,6 +59,13 @@ module.exports = function (grunt) {
             myFiles: ["static/**/*.js"]
         },
 
+        copy: {
+            main: {
+                src: "bower_components/normalize.css/normalize.css",
+                dest: "dist/normalize.css"
+            }
+        },
+
         clean: ["dist/temp/", "!dist/images/"],
 
         shell: {
@@ -79,9 +86,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-autoprefixer");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-clean");
+    grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-shell");
 
-    grunt.registerTask("default", ["stylus", "autoprefixer", "cssmin", "clean"]);
+    grunt.registerTask("default", ["stylus", "autoprefixer", "cssmin", "copy", "clean"]);
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-jscs");
