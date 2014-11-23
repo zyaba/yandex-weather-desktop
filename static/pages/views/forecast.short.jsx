@@ -2,7 +2,7 @@
 var ForecastShort = React.createClass({
     render: function () {
         return (
-            <div className="forecast-short">
+            <div className="forecast-short" style={{"display": "none"}}>
                 <div className="forecast-day">
                     <div className="forecast-day__header">пн
                         <div className="forecast-day__header-date">11</div>
