@@ -1,15 +1,16 @@
 var request = require('request'),
 	config = require('./config');
 
-function getGeoid(array, callback) {
-	var lon = array[0];
-	var lat = array [1];
+var request = require('request');
+
+function getTemp(array, callback) {
+	array = array.join(',');
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
 	    pathname: 'factual',
 	    query: {
-	        coords: lon + ',' + lat
+	        ids: array
 	    }
 	});
 
@@ -23,6 +24,6 @@ function getGeoid(array, callback) {
 			    callback(data);
 		}
 	});
-};
+}
 
-module.exports = getGeoid;
+module.exports = getTemp;

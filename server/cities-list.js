@@ -1,16 +1,11 @@
 var request = require('request'),
 	config = require('./config');
 
-function getGeoid(array, callback) {
-	var lon = array[0];
-	var lat = array [1];
+function getCities(geoid, callback) {
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
-	    pathname: 'factual',
-	    query: {
-	        coords: lon + ',' + lat
-	    }
+	    pathname: 'localities' + geoid + 'cities'
 	});
 
 	request.get(
@@ -25,4 +20,4 @@ function getGeoid(array, callback) {
 	});
 };
 
-module.exports = getGeoid;
+module.exports = getCities;
