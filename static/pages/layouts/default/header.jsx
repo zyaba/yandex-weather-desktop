@@ -1,5 +1,4 @@
-var React = require('react'),
-    DefaultLayoutHeader = React.createClass({
+var DefaultLayoutHeader = React.createClass({
     render: function () {
         return (
             <header className="header">

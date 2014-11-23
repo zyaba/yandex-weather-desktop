@@ -1,6 +1,4 @@
 /** @jsx React.DOM */
-var React = require('react');
-
 var ForecastHourly = React.createClass({
     render: function() {
         return (

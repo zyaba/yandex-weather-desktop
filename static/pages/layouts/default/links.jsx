@@ -1,5 +1,4 @@
-var React = require('react'),
-    DefaultLayoutLinks = React.createClass({
+var DefaultLayoutLinks = React.createClass({
         render: function () {
             return (
                 <div className="links-wrapper">

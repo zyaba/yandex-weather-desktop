@@ -1,12 +1,5 @@
 exports.index = function(req, res){
-    res.render('../views/index', {
-        //assets: {
-        //    css: [
-        //        '../../dist/weather.min.css'
-        //    ]
-        //    
-        //},
-        
+    res.render( __dirname + '/../../static/pages/views/index', {
         title: 'Yandex Weather'
     });
 };

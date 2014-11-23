@@ -1,5 +1,4 @@
-var React = require('react'),
-    DefaultLayoutFooter = React.createClass({
+var DefaultLayoutFooter = React.createClass({
         render: function () {
             return (
                 <footer className="footer">

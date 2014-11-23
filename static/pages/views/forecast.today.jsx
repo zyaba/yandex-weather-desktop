@@ -1,6 +1,4 @@
 /** @jsx React.DOM */
-var React = require('react');
-
 var ForecastToday = React.createClass({
     render: function () {
         return (

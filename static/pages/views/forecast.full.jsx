@@ -1,6 +1,4 @@
 /** @jsx React.DOM */
-var React = require('react');
-
 var ForecastFull = React.createClass({
     render: function () {
         return (

@@ -1,13 +1,12 @@
 /** @jsx React.DOM */
-var React = require('react');
 var DefaultLayout = require('../layouts/default/main'),
     Navigator = require('./navigator'),
-    ForecastToday= require('./forecast.today'),
-    ForecastFull = require('./forecast.full'),
-    ForecastShort = require('./forecast.short'),
-    CityDropDown = require('./city.dropdown'),
-    ForecastHourly = require('./forecast.hourly'),
-    DetailsMenu = require('./details.menu');
+    ForecastToday= require('./forecast.today.jsx'),
+    ForecastFull = require('./forecast.full.jsx'),
+    ForecastShort = require('./forecast.short.jsx'),
+    CityDropDown = require('./city.dropdown.jsx'),
+    ForecastHourly = require('./forecast.hourly.jsx'),
+    DetailsMenu = require('./details.menu.jsx');
 
 var Index = React.createClass({
     render: function() {

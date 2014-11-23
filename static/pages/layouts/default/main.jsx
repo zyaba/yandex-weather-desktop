@@ -1,6 +1,5 @@
 /** @jsx React.DOM */
-var React = require('react'),
-    DefaultLayoutHeader = require('./header'),
+var DefaultLayoutHeader = require('./header'),
     DefaultLayoutLinks = require('./links'),
     DefaultLayoutFooter = require('./footer');
 
