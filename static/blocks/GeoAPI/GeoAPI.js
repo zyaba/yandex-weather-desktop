@@ -7,7 +7,7 @@ var GeoAPI = (function () {
                     navigator.geolocation.getCurrentPosition(function(position) {                
                         if (position && position.coords) {
                             $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
-                                resolve(data);
+                                resolve(data.id);
                             }).fail(function(error) {reject(error)});                            
                         }
 

@@ -6,5 +6,5 @@ exports.index = function(req, res){
 
 exports.locality = function(req, res){
     var q = req.query;
-    require('../locality.js').getGeoid([q.longitude, q.latitude], console.log.bind(console))
+    require('../locality.js').getGeoid([q.longitude, q.latitude], function(id) { res.json({id: id}) })
 };
