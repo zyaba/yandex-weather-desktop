@@ -1,69 +1,79 @@
 .select
-	&__dropdown
-		display: inline-block
-		border: 1px solid rgba(0,0,0,0.25)
-		border-radius: 3px
-		padding: 6px 25px 5px 12px
-		cursor: pointer
-		position: relative
-		margin: 0 13px
-		font-size: 13px
+	&__dropdown {
+		display: inline-block;
+		border: 1px solid rgba(0,0,0,0.25);
+		border-radius: 3px;
+		padding: 6px 25px 5px 12px;
+		cursor: pointer;
+		position: relative;
+		margin: 0 13px;
+		font-size: 13px;
 		background-clip: padding-box;
-		background-color: #fff
+		background-color: #fff;
+	}
 
-		&-content
-			background-clip: padding-box
-			background-color: #fff
-			border: 1px solid rgba(0,0,0,0.28)
-			position: absolute
-			padding: 10px 15px
-			box-shadow: 0px 10px 36px 4px rgba(0, 0, 0, 0.41)
-			min-width: 185px
-			box-sizing: border-box
+		&-content {
+			background-clip: padding-box;
+			background-color: #fff;
+			border: 1px solid rgba(0,0,0,0.28);
+			position: absolute;
+			padding: 10px 15px;
+			box-shadow: 0px 10px 36px 4px rgba(0, 0, 0, 0.41);
+			min-width: 185px;
+			box-sizing: border-box;
+		}
 
-		&-list
-			list-style-type: none
-			padding-left: 0
-			margin: 0
+		&-list {
+			list-style-type: none;
+			padding-left: 0;
+			margin: 0;
+		}
 
 		&-item,
-		&-item--active
-			font-size: 13px
-			margin-left: 15px
-			margin-bottom: 10px
+		&-item--active {
+			font-size: 13px;
+			margin-left: 15px;
+			margin-bottom: 10px;
+		}
 
-		&-item--active:before
-			content: ''
-			background-image: url('../static/images/select__dropdown-tick.png')
-			width: 10px
-			height: 10px
-			position: absolute
-			left: 15px
+		&-item--active:before {
+			content: '';
+			background-image: url('../static/images/select__dropdown-tick.png');
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			left: 15px;
+		}
 
-		&-item:last-child
-			margin-bottom: 6px
+		&-item:last-child {
+			margin-bottom: 6px;
+		}
 
-		&-footer
-			font-size: 13px
-			border-top: 1px solid #e5e5e5
-			margin: 0 -15px
-			padding-left: 15px
-			padding-top: 8px
+		&-footer {
+			font-size: 13px;
+			border-top: 1px solid #e5e5e5;
+			margin: 0 -15px;
+			padding-left: 15px;
+			padding-top: 8px;
+		}
 
-		&-title
-			color: #999
-			margin 0 0 8px
-			font-size: 13px
+		&-title {
+			color: #999;
+			margin 0 0 8px;
+			font-size: 13px;
+		}
 
-		&-link
-			text-decoration: none
-			color: inherit
+		&-link {
+			text-decoration: none;
+			color: inherit;
+		}
 
-	&__dropdown:after
-		content: ''
-		position: absolute
-		top: 12px
-		right: 9px
-		width: 11px
-		height: 6px
-		background-image: url('../static/images/arrow-bottom.png')
+	&__dropdown:after {
+		content: '';
+		position: absolute;
+		top: 12px;
+		right: 9px;
+		width: 11px;
+		height: 6px;
+		background-image: url('../static/images/arrow-bottom.png');
+	}
