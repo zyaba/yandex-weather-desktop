@@ -30,8 +30,8 @@ grunt express
 Now the server should be up and running on [localhost:8080](http://localhost:8080/)
 
 ## Code-Style Convention
-Install [.editorconfig](http://editorconfig.org/) plugin for you editor or IDE in order to maintain consistent coding styles  
-Run the following Grunt task to setup pre-commit hook, that runs checks code-style before every commit is made
+1. Install [.editorconfig](http://editorconfig.org/) plugin for you editor or IDE in order to maintain consistent coding styles  
+2. Run the following Grunt task to setup pre-commit hook, that checks code-style before every commit is made
 ```bash
 grunt setup
 ```
