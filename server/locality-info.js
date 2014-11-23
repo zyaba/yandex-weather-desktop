@@ -16,8 +16,9 @@ function getInfo(geoid, callback) {
 		function (error, response, data) {
 			if (!error && response.statusCode == 200) {
 			    callback(data);
-		}
-	});
+		    }
+	    }
+    );
 }
 
 module.exports = getInfo;
