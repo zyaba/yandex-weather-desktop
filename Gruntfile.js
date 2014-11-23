@@ -67,6 +67,12 @@ module.exports = function (grunt) {
             index: {
                 src: "static/pages/views/index.html",
                 dest: "dist/index.html"
+            },
+            staticImages: {
+                src: "static/images/*",
+                dest: "dist/images/",
+                expand: true,
+                flatten: true
             }
         },
 

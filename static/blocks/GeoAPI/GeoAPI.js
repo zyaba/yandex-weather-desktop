@@ -7,33 +7,35 @@ var GeoAPI = (function () {
                     navigator.geolocation.getCurrentPosition(function(position) {                
                         if (position && position.coords) {
                             $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
-                                resolve(data.id);
-                            }).fail(function(error) {reject(error)});                            
+                                console.log(data)
+                                resolve(data.geoid);
+                            }).fail(function(error) {reject(error)}); 
+                            
                         }
 
                     }, function(error) {
-                        var msg = "Unknown Error";
+                        var msg = 'Unknown Error';
                         switch(error.code) {
                             case error.PERMISSION_DENIED:
-                                msg = "User denied the request for Geolocation."
+                                msg = 'User denied the request for Geolocation.';
                                 break;
                             case error.POSITION_UNAVAILABLE:
-                                msg = "Location information is unavailable."
+                                msg = 'Location information is unavailable.';
                                 break;
                             case error.TIMEOUT:
-                                msg = "The request to get user location timed out."
+                                msg = 'The request to get user location timed out.';
                                 break;
                             case error.UNKNOWN_ERROR:
-                                msg = "An unknown error occurred."
+                                msg = 'An unknown error occurred.';
                                 break;
                         }
 
                     });
 
                 }
-            })
+            });
             
-            return promise
+            return promise;
             
         }
     }
