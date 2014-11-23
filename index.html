@@ -10,77 +10,57 @@
 
     <title>Yandex Weather</title>
 </head>
-
 <body>
-    <div class="forecast-navigator">
-        <h3 class="forecast-now__city">Екатерибург</h3>
-        <div id="select__choose-city" class="select__dropdown">
-            <span class="select__text">Другой город</span>
-        </div>
+
+  <div class="forecast-navigator">
+    <h3 class="forecast-navigator__city">Екатерибург</h3>
+    <div class="select">
+      <span class="select__text">Другой город</span>
     </div>
-    
-    <table class="b-weather-main">
-        <tr>
-            <td class="b-weather-main__when--now">сейчас</td>
-            <td class="b-weather-main__when--later">днем</td>
-            <td class="b-weather-main__when--later">вечером</td>
-            <td class="b-weather-main__when--later">ночью</td>
-        </tr>
-        <tr>
-            <td class="b-weather-main__now">
-                <table>
-                    <tr>
-                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-                    </tr>
-                    <tr>
-                        <td class="b-weather-main__icon--cloudy"></td>
-                        <td class="b-weather-main__status">малооблачно</td>
-                    </tr>
-                </table>
-            </td>
-            <td class="b-weather-main__later">
-                <table>
-                    <tr>
-                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-                    </tr>
-                    <tr>
-                        <td class="b-weather-main__icon--rainy"></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="b-weather-main__later">
-                <table>
-                    <tr>
-                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-                    </tr>
-                    <tr>
-                        <td class="b-weather-main__icon--wind"></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="b-weather-main__later">
-                <table>
-                    <tr>
-                        <td colspan="2" class="b-weather-main__temp">+30 °C</td>
-                    </tr>
-                    <tr>
-                        <td class="b-weather-main__icon--snow"></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="b-additional">
-                <p class="b-additional__line">Давление: 735 мм рт. ст.</p>
-                <p class="b-additional__line">Ветер: северо-восточный, 2.7 м/с (9.7 км/ч)</p>
-                <p class="b-additional__line">Влажность: 72%</p>
-                <p class="b-additional__line">Восход: 06:36 Заход: 21:24</p>
-                <p class="b-additional__line">Данные зарегистрированы недавно</p>
-            </td>
-        </tr>
-    </table>
-    
-    <div class="b-yesterday">
-        <span class="b-yesterday__text">вчера +10 °C</span>
+  </div>
+  <div class="weather-main">
+    <div class="weather-main__container">
+      <span class="weather-main__when">сегодня</span>
+      <div class="weather-main__forecast">
+        <span class="weather-main__degree">+30 °C</span>
+        <div class="weather-main__icon"></div>
+        <span class="weather-main__condensation">малооблачно</span>
+      </div>
     </div>
+    <div class="weather-main__container">
+      <span class="weather-main__when">днем</span>
+      <div class="weather-main__forecast">
+        <span class="weather-main__degree">+30 °C</span>
+        <div class="weather-main__icon"></div>
+      </div>
+    </div>
+    <div class="weather-main__container">
+      <span class="weather-main__when">вечером</span>
+      <div class="weather-main__forecast">
+        <span class="weather-main__degree">+30 °C</span>
+        <div class="weather-main__icon"></div>
+      </div>
+    </div>
+    <div class="weather-main__container">
+      <span class="weather-main__when">ночью</span>
+      <div class="weather-main__forecast">
+        <span class="weather-main__degree">+30 °C</span>
+        <div class="weather-main__icon"></div>
+      </div>
+    </div>
+    <div class="weather-main__additional">
+      <span class="weather-main__when"></span>
+      <p class="weather-main__line">Давление: 735 мм рт. ст.</p>
+      <p class="weather-main__line">Ветер: северо-восточный, 2.7 м/с (9.7 км/ч)</p>
+      <p class="weather-main__line">Влажность: 72%</p>
+      <p class="weather-main__line--margin-5-bottom">Восход: 06:36 Заход: 21:24</p>
+      <p class="weather-main__line">Данные зарегистрированы недавно</p>
+      <div class="tip"></div>
+    </div>
+    <div class="weather-main__yesterday">
+      вчера +10 °C
+    </div>
+  </div>
 
 <div style="margin: 50px;">
     <div class="tabs">
@@ -324,8 +304,28 @@
             <div class="forecast-day__footer">+8</div>
         </div>
     </div>
-    
-   
+  </div>
+
+  <div class="select select__dropdown" style="top: 58px; left: 145px; display: none;">
+    <p class="select__dropdown-title">Последние города</p>
+    <ul class="select__dropdown-list">
+      <li class="select__dropdown-item--active">
+        <a href="#" class="select__dropdown-link">Екатеринбург</a>
+      </li>
+      <li class="select__dropdown-item">
+        <a href="#" class="select__dropdown-link">Киев</a></li>
+      <li class="select__dropdown-item">
+        <a href="#" class="select__dropdown-link">Окленд</a>
+      </li>
+    </ul>
+    <p class="select__dropdown-footer">
+      <a href="#" class="select__dropdown-link">Все города</a>
+    </p>
+  </div>
+
+  <div id="hint__forecast-base" class="hint" style="top: 198px; left: 524px; display: none;">
+    <p class="hint__text">На основе прогноза</p>
+  </div>
     <div style="margin: 30px;">
         <div class="forecast-hourly">
             <div class="forecast-hourly__item">                
