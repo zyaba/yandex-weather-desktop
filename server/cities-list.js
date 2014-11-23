@@ -2,7 +2,7 @@ var request = require('request'),
 	config = require('./config');
 
 function getCities(geoid, callback) {
-	var uri = path.join(config.uri, geoid, '/cities');
+	var uri = path.join(config.uri, 'localities', geoid, '/cities');
 
 	request.get(
 		{

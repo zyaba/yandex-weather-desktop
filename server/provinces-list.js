@@ -2,7 +2,7 @@ var request = require('request'),
 	config = require('./config');
 
 function getProvinces(geoid, callback) {
-	var uri = path.join(config.uri, geoid, '/provinces');
+	var uri = path.join(config.uri, 'localities', geoid, '/provinces');
 
 	request.get(
 		{
