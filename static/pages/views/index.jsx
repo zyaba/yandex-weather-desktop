@@ -11,11 +11,11 @@ var DefaultLayout = require('../layouts/default/main'),
 var Index = React.createClass({
     render: function() {
         return (
-            <DefaultLayout title={this.props.title}>
+            <DefaultLayout title={this.props.title} apiData={this.props.apiData}>
                 <Navigator></Navigator>
-                <ForecastToday></ForecastToday>
+                <ForecastToday apiData={this.props.apiData}></ForecastToday>
                 <DetailsMenu></DetailsMenu>
-                <ForecastFull></ForecastFull>
+                <ForecastFull apiData={this.props.apiData}></ForecastFull>
                 <ForecastShort></ForecastShort>
                 <CityDropDown></CityDropDown>
                 
