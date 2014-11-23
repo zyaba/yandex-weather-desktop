@@ -1,11 +1,9 @@
-module.exports.getGeoid = getGeoid;
+module.exports.getCities = getCities;
 
 var request = require('request');
 
-function getGeoid(array, callback) {
-	var lon = array[0];
-	var lat = array [1];
-	var uri = 'http://ekb.shri14.ru/api/geocode?coords=' + lon + ',' + lat;
+function getCities(geoid, callback) {
+	var uri = 'http://ekb.shri14.ru/api/localities/' + geoid + '/cities';
 
 	request.get(
 		{
