@@ -8,8 +8,10 @@ app.use("/dist", express.static(__dirname + "/../dist"));
 app.use("/bower_components", express.static(__dirname + "/../bower_components"));
 
 app.set('view engine', 'jsx');
+
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.get('/', require('./routes').index);
+app.get('/locality', require('./routes').locality);
 
 app.listen(8080);

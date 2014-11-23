@@ -8,7 +8,7 @@ var GeoAPI = (function () {
                         if (position && position.coords) {
                             $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
                                 resolve(data);
-                            });                            
+                            }).fail(function(error) {reject(error)});                            
                         }
 
                     }, function(error) {
@@ -38,7 +38,3 @@ var GeoAPI = (function () {
         }
     }
 })()
-
-GeoAPI.getGeoId().then(function(id) {
-    console.log(id)
-});

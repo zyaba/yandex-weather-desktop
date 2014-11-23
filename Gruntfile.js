@@ -63,6 +63,10 @@ module.exports = function (grunt) {
             main: {
                 src: "bower_components/normalize.css/normalize.css",
                 dest: "dist/normalize.css"
+            },
+            index: {
+                src: "static/pages/views/index.html",
+                dest: "dist/index.html"
             }
         },
 
