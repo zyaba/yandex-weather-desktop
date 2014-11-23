@@ -1,9 +1,8 @@
-module.exports.getCities = getCities;
-
-var request = require('request');
+var request = require('request'),
+	config = require('./config');
 
 function getCities(geoid, callback) {
-	var uri = 'http://ekb.shri14.ru/api/localities/' + geoid + '/cities';
+	var uri = path.join(config.uri, geoid, '/cities');
 
 	request.get(
 		{
@@ -15,4 +14,6 @@ function getCities(geoid, callback) {
 			    callback(data);
 		}
 	});
-}
+};
+
+module.exports = getCities;

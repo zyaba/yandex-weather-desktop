@@ -1,11 +1,10 @@
-module.exports.getGeoid = getGeoid;
-
-var request = require('request');
+var request = require('request'),
+	config = require('./config');
 
 function getGeoid(array, callback) {
 	var lon = array[0];
 	var lat = array [1];
-	var uri = 'http://ekb.shri14.ru/api/geocode?coords=' + lon + ',' + lat;
+	var uri = path.join(config.uri, lon, ',', lat);
 
 	request.get(
 		{
@@ -17,4 +16,6 @@ function getGeoid(array, callback) {
 			    callback(data);
 		}
 	});
-}
+};
+
+module.exports = getGeoid;

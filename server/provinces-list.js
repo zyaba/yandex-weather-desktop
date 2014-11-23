@@ -1,9 +1,8 @@
-module.exports.getProvinces = getProvinces;
-
-var request = require('request');
+var request = require('request'),
+	config = require('./config');
 
 function getProvinces(geoid, callback) {
-	var uri = 'http://ekb.shri14.ru/api/localities/' + geoid + '/provinces';
+	var uri = path.join(config.uri, geoid, '/provinces');
 
 	request.get(
 		{
@@ -15,4 +14,6 @@ function getProvinces(geoid, callback) {
 			    callback(data);
 		}
 	});
-}
+};
+
+module.exports = getProvinces;
