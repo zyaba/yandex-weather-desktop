@@ -9,7 +9,7 @@ function getInfo(geoid) {
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
-	    pathname: 'localities/' + geoid
+	    pathname: ['localities', geoid].join('/')
 	});
 
 	request.get({

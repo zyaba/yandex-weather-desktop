@@ -8,13 +8,12 @@ var request = require('request');
 function getTemp(array) {
 	var deferred = vow.defer();
 
-	array = array.join(',');
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
 	    pathname: 'factual',
 	    query: {
-	        ids: array
+	        ids: array.join(',')
 	    }
 	});
 

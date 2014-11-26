@@ -24,8 +24,8 @@ exports.geoid = function(req, res){
     	cities(req.params.geoid),
     	provinces(req.params.geoid),
     	temp([req.params.geoid]),
-    	info(req.params.geoid) ])
-    .spread(function(locality, cities, provinces, temp, info) { 
+    	info(req.params.geoid)
+    	]).spread(function(locality, cities, provinces, temp, info) { 
 		res.json({ locality: locality,
 			cities: cities,
 			provinces: provinces,
@@ -39,6 +39,13 @@ exports.geoid = function(req, res){
 	    res.render( __dirname + '/../../static/pages/views/index', {
 	        title: 'Yandex Weather ' + req.params.geoid,
 	        apiData: apiTestData
+	    })
+	},
+    function(error){
+    	console.log('rejected', arguments)
+    	res.render( __dirname + '/../../static/pages/views/index', {
+	        title: 'Yandex Weather ' + req.params.geoid,
+	        apiData: apiTestData
+	    })
 	    });
-	})
 };

@@ -9,8 +9,9 @@ function getCities(geoid) {
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
-	    pathname: 'localities' + geoid + 'cities'
+	    pathname: ['localities', geoid, 'cities'].join('/')
 	});
+
 
 	request.get({
 		uri:uri,

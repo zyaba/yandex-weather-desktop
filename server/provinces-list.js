@@ -9,7 +9,7 @@ function getProvinces(geoid) {
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
-	    pathname: 'localities' + geoid + 'provinces'
+	    pathname: ['localities', geoid, 'provinces'].join('/')
 	});
 
 	request.get({

@@ -6,14 +6,12 @@ var request = require('request'),
 function getGeoid(array) {
 	var deferred = vow.defer();
 
-	var lon = array[0];
-	var lat = array [1];
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
 	    pathname: 'factual',
 	    query: {
-	        coords: lon + ',' + lat
+	        coords: array.join()
 	    }
 	});
  
