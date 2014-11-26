@@ -1,10 +1,13 @@
 var request = require('request'),
 	config = require('./config'),
-	url = require('url');
+	url = require('url'),
+	vow = require('vow');
 
 var request = require('request');
 
-function getTemp(array, callback) {
+function getTemp(array) {
+	var deferred = vow.defer();
+
 	array = array.join(',');
 	var uri = url.format({
 	    protocol: 'http',
@@ -15,16 +18,18 @@ function getTemp(array, callback) {
 	    }
 	});
 
-	request.get(
-		{
-			uri:uri,
-			json: true
-		},
-		function (error, response, data) {
-			if (!error && response.statusCode == 200) {
-			    callback(data);
+	request.get({
+		uri:uri,
+		json: true
+	}, function (error, response, data) {
+		if (!error && response.statusCode == 200) {
+		    deferred.resolve(data);
+		} else {
+			deferred.reject();
 		}
 	});
+
+	return deferred.promise();
 }
 
 module.exports = getTemp;
