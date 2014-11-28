@@ -11,8 +11,10 @@ app.set('view engine', 'jsx');
 
 app.engine('jsx', require('express-react-views').createEngine());
 
-app.get('/', require('./routes').index);
-app.get('/locality', require('./routes').locality);
-app.get('/:geoid', require('./routes').geoid );
+var routes = require('./routes');
+
+app.get('/', routes.index);
+app.get('/locality', routes.locality);
+app.get('/:geoid', routes.geoid );
 
 app.listen(8080);

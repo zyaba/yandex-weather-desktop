@@ -9,10 +9,10 @@
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <script src="../static/blocks/GeoAPI/GeoAPI.js"></script>
         <script>
-        
-GeoAPI.getGeoId().then(function(id) {
-    window.location.href = "/" + id;
-});
+            GeoAPI.getGeoId().then(function(id) {
+                var id = id ? id : 1;
+                window.location = "/" + id;
+            });
         </script>
     </head>
     <body>
