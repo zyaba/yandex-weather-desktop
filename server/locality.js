@@ -3,13 +3,15 @@ var request = require('request'),
 	url = require('url'),
 	vow = require('vow');
 
+/*** Return geo id by latitlude and longitude***/
+
 function getGeoid(array) {
 	var deferred = vow.defer();
 
 	var uri = url.format({
 	    protocol: 'http',
 	    hostname: config.uri,
-	    pathname: 'factual',
+	    pathname: 'geocode',
 	    query: {
 	        coords: array.join()
 	    }

@@ -23,8 +23,8 @@ exports.locality = function(req, res){
 exports.geoid = function(req, res){
 	var q = req.query;
     vow.all([ locality([q.longitude, q.latitude]),
-    	cities(req.params.geoid),
-    	provinces(req.params.geoid),
+    	//cities(req.params.geoid),
+    	//provinces(req.params.geoid),
     	temp([req.params.geoid]),
     	info(req.params.geoid)
     	]).spread(function(locality, cities, provinces, temp, info) { 
