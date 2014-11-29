@@ -6,8 +6,8 @@ ForecastFull = React.createClass({
     render: function () {
         return (
             <div>
-                {this.props.apiData.forecast.map(function(object, i){
-                    return <ForecastFullItem apiData={object} day={i}/>;
+                {this.props.full.map(function(object, i){
+                    return <ForecastFullItem day={object} item={i}/>;
                 })}
             </div>
         );

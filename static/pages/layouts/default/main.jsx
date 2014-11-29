@@ -19,7 +19,7 @@ var DefaultLayout = React.createClass({
                 </head>
                 <body>
                     <div className="page__wrapper">
-                        <DefaultLayoutHeader apiData={this.props.apiData}></DefaultLayoutHeader>
+                        <DefaultLayoutHeader city={this.props.info.name}></DefaultLayoutHeader>
 
                         {this.props.children}
 

@@ -15,6 +15,6 @@ var routes = require('./routes');
 
 app.get('/', routes.index);
 app.get('/locality', routes.locality);
-app.get('/:geoid', routes.geoid );
+app.get('/:geoid', routes.forecast );
 
 app.listen(8080);
