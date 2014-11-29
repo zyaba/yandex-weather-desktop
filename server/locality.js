@@ -16,12 +16,18 @@ function getGeoid(array) {
 	        coords: array.join()
 	    }
 	});
- 
+    
 	request.get({
 		uri:uri,
 		json: true
 	}, function (error, response, data) {
-		if (!error && response.statusCode == 200) {
+		if (!error) {
+            if (response.statusCode !== 200) {
+                data = {
+                  "geoid": 213,
+                  "name": "Москва"
+                }
+            }
 		    deferred.resolve(data);
 		} else {
 			deferred.reject();
