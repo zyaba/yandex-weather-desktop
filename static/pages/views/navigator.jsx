@@ -4,7 +4,7 @@ var ForecastNavigator = React.createClass({
         return (
             <div className="forecast-navigator">
                 <h3 className="forecast-navigator__city">{this.props.city}</h3>
-                <div className="select">
+                <div className="select select-hidden">
                     <span className="select__text">Другой город</span>
                 </div>
             </div>

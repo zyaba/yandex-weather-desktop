@@ -1,6 +1,8 @@
 var DefaultLayoutLinks = React.createClass({
         render: function () {
             return (
+            <div>
+                <div id="yandex_direct_D-I-106713-4"></div>
                 <div className="links-wrapper">
                     <div className="links-section">
                         <h4 className="links-section__links-header">Погода на карте</h4>
@@ -55,6 +57,7 @@ var DefaultLayoutLinks = React.createClass({
                             </li>
                         </ul>
                     </div>
+                </div>
                 </div>
             );
         }
