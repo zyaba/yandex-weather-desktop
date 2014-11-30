@@ -16,12 +16,12 @@ ForecastShortItem = React.createClass({
                     <div className="forecast-short__date__weekday">{date.format('dd')}</div>
                     <div className="forecast-short__date__monthday">{date.get('date')}</div>
                 </div>
-                <div className="forecast-short__day__body" style={{"background-color": day.color_max}}>
+                <div className="forecast-short__day__body" style={{"backgroundColor": day.color_max}}>
                     <div className="forecast-short__day__icon"><img src={"http://ekb.shri14.ru/icons/" + day.weather_icon + ".svg"} width="32" height="32" alt="{day.weather}" title="{day.weather}" /></div>
                     <div className="forecast-short__day__precipitation">{day.weather}</div>                    
                     <div className="forecast-short__day__degree">{day.temp_max}</div>
                 </div>
-                <div className="forecast-short__day__footer" style={{"background-color": day.color_min}}>{day.temp_min}</div>
+                <div className="forecast-short__day__footer" style={{"backgroundColor": day.color_min}}>{day.temp_min}</div>
             </div>
         );
     }
