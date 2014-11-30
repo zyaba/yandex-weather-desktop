@@ -1,7 +1,10 @@
 /** @jsx React.DOM */
 var moment = require('moment'),
+    momentLocales = require('../../../server/locales/moment.locale.js'),
     ForecastFullItemItem = require('./forecast.full.item.row'),
     ForecastFullItem;
+
+moment.locale( 'ru', momentLocales );
 
 ForecastFullItem = React.createClass({
     render: function () {
