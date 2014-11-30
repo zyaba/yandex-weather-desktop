@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var moment = require('moment'),
-    momentLocales= require('../../../server/locales/moment.js'),
+    momentLocales = require('../../../server/locales/moment.locale.js'),
     ForecastShortItem;
 
 moment.locale( 'ru', momentLocales );

@@ -1,5 +1,5 @@
 var request = require('request'),
-	urlsConfig = require('../configs/urls'),
+    urlsConfig = require('../configs/urls.config'),
 	url = require('url'),
 	vow = require('vow');
 
