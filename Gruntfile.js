@@ -37,8 +37,8 @@ module.exports = function (grunt) {
                 reload: true
             },
             src: {
-                files: ["static/**/*.styl"],
-                tasks: ["default"],
+                files: ["static/**/*", "static/**/**/**/*"],
+                tasks: ["default", "express"],
             }
         },
 
@@ -71,6 +71,12 @@ module.exports = function (grunt) {
             staticImages: {
                 src: "static/images/*",
                 dest: "dist/images/",
+                expand: true,
+                flatten: true
+            },
+            js: {
+                src: "static/scripts/*",
+                dest: "dist/js/",
                 expand: true,
                 flatten: true
             }

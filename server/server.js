@@ -14,6 +14,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 var routes = require('./routes');
 
 app.get('/', routes.index);
+app.get('/suggest', routes.suggest );
 app.get('/locality', routes.locality);
 app.get('/:geoid', routes.forecast );
 

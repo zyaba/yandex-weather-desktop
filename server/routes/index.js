@@ -1,4 +1,3 @@
-
 var apiTestData = require("../data.json");
 
 var locality = require('../locality.js'),
@@ -8,7 +7,8 @@ var locality = require('../locality.js'),
 	info = require('../locality-info.js'),
 	vow = require('vow'),
 	colors = require('../colors.js'),
-	extend = require('node.extend');
+	extend = require('node.extend'),
+    suggest = require('../suggest.js');
 
 exports.index = function(req, res){
     var path = require('path');
@@ -22,6 +22,13 @@ exports.locality = function(req, res){
     	res.json(data) 
     });
 };
+exports.suggest = function(req, res){
+    var q = req.query;
+    suggest(q).then(function(data) { 
+        res.json(data) 
+    });
+};
+
 exports.geoid = function(req, res){
 	var q = req.query;
     vow.all([ locality([q.longitude, q.latitude]),

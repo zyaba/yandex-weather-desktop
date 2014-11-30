@@ -8,7 +8,7 @@ var ForecastToday = React.createClass({
                 <div className="weather-main__container">
                     <span className="weather-main__when">сегодня</span>
                     <div className="weather-main__forecast" style={{"background-color": weatherToday.now.color}}>
-                        <span className="weather-main__degree">{weatherToday.now.temp} °C</span>
+                        <div className="weather-main__degree">{weatherToday.now.temp} °C</div>
                         <div className="weather-main__icon" style={{"background-image": "url(http://ekb.shri14.ru/icons/" + weatherToday.now.weather_icon + ".svg)"}}></div>
                         <span className="weather-main__condensation">{weatherToday.now.weather}</span>
                     </div>
