@@ -47,7 +47,7 @@ ForecastFullItem = React.createClass({
                         // morning, day, evening, night
                         // todo не возвращать больше 4х
                         if ( i < 4 ) {
-                            return <ForecastFullItemItem part={object} />;
+                            return <ForecastFullItemItem part={object} key={i}/>;
                         }
                     })}
                 </div>
