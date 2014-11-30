@@ -37,4 +37,20 @@ $(function () {
     input.on('typeahead:selected typeahead:autocompleted', function(e, data) {
         geoid = data.geoid;
     });
+
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "D-I-106713-4",
+                renderTo: "yandex_direct_D-I-106713-4"
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
 })
