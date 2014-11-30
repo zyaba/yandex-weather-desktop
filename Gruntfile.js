@@ -60,6 +60,12 @@ module.exports = function (grunt) {
         },
 
         copy: {
+            jquery: {
+                src: "bower_components/jquery/dist/*",
+                dest: "dist/js/",
+                expand: true,
+                flatten: true
+            },
             main: {
                 src: "bower_components/normalize.css/normalize.css",
                 dest: "dist/normalize.css"
@@ -71,6 +77,18 @@ module.exports = function (grunt) {
             staticImages: {
                 src: "static/images/*",
                 dest: "dist/images/",
+                expand: true,
+                flatten: true
+            },
+            tabsjs: {
+                src: "static/blocks/tabs/bootstrap.min.js",
+                dest: "dist/js/",
+                expand: true,
+                flatten: true
+            },
+            tabscss: {
+                src: "static/blocks/tabs/bootstrap.min.css",
+                dest: "dist/",
                 expand: true,
                 flatten: true
             }
