@@ -19,6 +19,7 @@ var DefaultLayout = React.createClass({
                     <link rel="stylesheet" type="text/css" href="dist/weather.min.css" media="screen" />
                     <script src="dist/js/jquery.min.js"></script>
                     <script src="dist/js/bootstrap.min.js"></script>
+                    <script src="dist/js/clear.btn.min.js"></script>
                     
                 </head>
                 <body>
