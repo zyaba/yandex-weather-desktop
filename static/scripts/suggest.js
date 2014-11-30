@@ -20,7 +20,13 @@ $(function () {
 	},
 	{
 		source: dataSourse.ttAdapter(),
-		displayKey: 'name'
+		displayKey: 'name',
+        templates: {suggestion:function(data) 
+            {
+                return '<p style="background-color:' + data.color + '">' + data.name + '<span class="tt-suggestion__span">' + data.temp
+                 + '</span></p>'
+            }
+        }
 	});
     input.parents('form').on('submit', function(e) {
         e.preventDefault();
@@ -28,10 +34,23 @@ $(function () {
             location.pathname = '/' + geoid;
         }
     });
-    input.on('typeahead:selected', function(e, data) {
+    input.on('typeahead:selected typeahead:autocompleted', function(e, data) {
         geoid = data.geoid;
     });
-    input.on('typeahead:autocompleted', function(e, data) {
-        geoid = data.geoid;
-    })
+
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "D-I-106713-4",
+                renderTo: "yandex_direct_D-I-106713-4"
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
 })
