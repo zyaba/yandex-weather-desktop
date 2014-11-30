@@ -2,6 +2,14 @@
 var moment = require('moment'),
     ForecastShortItem;
 
+moment.locale('ru', {
+    months: [
+        "января", "февраля", "марта", "апреля", "мая", "июня", "июля",
+        "августа", "сентября", "октября", "ноября", "декабря"
+    ],
+    weekdaysMin: [ 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС' ] 
+});
+
 ForecastShortItem = React.createClass({
     render: function () {
         var day = this.props.day,
