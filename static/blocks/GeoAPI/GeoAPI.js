@@ -2,11 +2,8 @@ var GeoAPI = (function () {
     var MOSCOW_ID = 213;
     return {
         getGeoId: function() {
-            var promise = $.Deferred();
-            var weather = null;
-            if ('localStorage' in window && window['localStorage'] !== null) {
-                weather = JSON.parse(window.localStorage.getItem ("yaWeather")) || {};
-            }
+            var promise = $.Deferred(),
+                weather = JSON.parse(StorageAPI.getItem("yaWeather")||"{}");
             
             if (weather && weather.cities) {
                 var city = weather.cities.filter(function(object, i) {
@@ -30,10 +27,9 @@ var GeoAPI = (function () {
                                         weather.cities.push({id: data.geoid, last: true})
                                     }
                                     
-                                    window.localStorage.setItem("yaWeather",JSON.stringify(weather));
+                                    StorageAPI.setItem("yaWeather",JSON.stringify(weather));
                                 }
                                 
-
                                 promise.resolve(data.geoid);
                             }).fail(function(error) {promise.resolve(MOSCOW_ID);});
                         } else {
@@ -53,3 +49,4 @@ var GeoAPI = (function () {
         }
     };
 })();
+
