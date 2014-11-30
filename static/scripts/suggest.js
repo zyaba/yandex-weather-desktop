@@ -13,6 +13,7 @@ var dataSourse = new Bloodhound({
 
 $(function () {
     var input = $('.city-search__input');
+    var geoid;
 	dataSourse.initialize();
 	input.typeahead({
 		minLength: 1
@@ -20,7 +21,17 @@ $(function () {
 	{
 		source: dataSourse.ttAdapter(),
 		displayKey: 'name'
-	}).parent('form').on('submit', function(e) {
+	});
+    input.parents('form').on('submit', function(e) {
         e.preventDefault();
+        if (geoid) {
+            location.pathname = '/' + geoid;
+        }
     });
+    input.on('typeahead:selected', function(e, data) {
+        geoid = data.geoid;
+    });
+    input.on('typeahead:autocompleted', function(e, data) {
+        geoid = data.geoid;
+    })
 })
