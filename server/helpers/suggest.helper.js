@@ -1,20 +1,18 @@
 var request = require('request'),
     urlsConfig = require('../configs/urls.config'),
+    suggestConfig = require('../configs/suggest.config.js'),
 	url = require('url'),
 	vow = require('vow');
-
-/*** Return geo id by latitlude and longitude***/
 
 function suggest(q) {
 	var deferred = vow.defer();
 
 	var uri = url.format({
-	    protocol: 'http',
+		protocol: suggestConfig.protocol,
 	    hostname: urlsConfig.api,
-	    pathname: 'suggest',
+	    pathname: suggestConfig.path,
 	    query: q
 	});
-	console.log(uri);
 	request.get({
 		uri:uri,
 		json: true

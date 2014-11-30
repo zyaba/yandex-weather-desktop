@@ -1,7 +1,7 @@
 var dataSourse = new Bloodhound({
     name: 'ya-weather',
     remote: {
-        url: 'http://localhost:8080/suggest?query=%QUERY'
+        url: '/suggest?query=%QUERY'
     },
     datumTokenizer: function(d) {
     	return d;
@@ -12,12 +12,15 @@ var dataSourse = new Bloodhound({
 })
 
 $(function () {
+    var input = $('.city-search__input');
 	dataSourse.initialize();
-	$('.city-search__input').typeahead({
+	input.typeahead({
 		minLength: 1
 	},
 	{
 		source: dataSourse.ttAdapter(),
 		displayKey: 'name'
-	});
+	}).parent('form').on('submit', function(e) {
+        e.preventDefault();
+    });
 })
