@@ -11,8 +11,8 @@ var ForecastFullItemRow = React.createClass({
                     <div>{item.temp_min}&hellip;{item.temp_max}</div>
                 </div>
                 <div className="forecast-full__weather__precipitation">
-                    <img className="forecast-full__weather__precipitation__icon" src={"http://ekb.shri14.ru/icons/" + item.weather_icon + ".svg"} width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" />
-                        {item.weather}
+                    <div className="forecast-full__weather__precipitation__icon"><img src={"http://ekb.shri14.ru/icons/" + item.weather_icon + ".svg"} width="30" height="30" alt="облачно с прояснениями" title="облачно с прояснениями" /></div>
+                    <div className="forecast-full__weather__precipitation__text">{item.weather}</div>
                 </div>
                 <div className="forecast-full__weather__pressure">{item.pressure}</div>
                 <div className="forecast-full__weather__humidity">{item.humidity}%</div>
