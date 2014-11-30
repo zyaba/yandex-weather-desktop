@@ -14,7 +14,7 @@ ForecastHourlyItem = React.createClass({
         
         return (
             <div className="forecast-hourly__item">
-                <div className={ hour.temp > 0 ? 'forecast-hourly__bar forecast-hourly__bar_plus': 'forecast-hourly__bar forecast-hourly__bar_minus'} style={style}><div className="forecast-hourly__text">{hour.temp}</div></div>
+                <div className={ hour.temp > 0 ? 'forecast-hourly__bar forecast-hourly__bar_plus': 'forecast-hourly__bar forecast-hourly__bar_minus'} style={style}><div className="forecast-hourly__text">{hour.temp>0?"+":""}{hour.temp}</div></div>
                 <div className="forecast-hourly__hour">{hour.hour}:00</div>                                       
             </div>
         );
