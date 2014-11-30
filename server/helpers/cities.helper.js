@@ -1,16 +1,17 @@
 var request = require('request'),
-	config = require('./config'),
+    urlsConfig = require('../configs/urls.config'),
 	url = require('url'),
 	vow = require('vow');
 
-function getProvinces(geoid) {
+function getCities(geoid) {
 	var deferred = vow.defer();
 
 	var uri = url.format({
 	    protocol: 'http',
-	    hostname: config.uri,
-	    pathname: ['localities', geoid, 'provinces'].join('/')
+	    hostname: urlsConfig.api,
+	    pathname: ['localities', geoid, 'cities'].join('/')
 	});
+
 
 	request.get({
 		uri:uri,
@@ -24,6 +25,6 @@ function getProvinces(geoid) {
 	});
 
 	return deferred.promise();
-}
+};
 
-module.exports = getProvinces;
+module.exports = getCities;
