@@ -18,7 +18,7 @@ var DefaultLayoutHeader = React.createClass({
                         <div className="city-search__label-triangle"></div>
                         <div className="city-search__actions-wrapper">
                             <input className="city-search__input" placeholder={this.props.city}/>
-                            <span className="city-search__clear-btn"></span>
+                            <span className="city-search__clear-btn hidden"></span>
                         </div>
                         <button type="submit" className="city-search__submit-btn">Найти</button>
                     </form>

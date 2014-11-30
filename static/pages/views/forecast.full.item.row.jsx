@@ -5,7 +5,7 @@ var ForecastFullItemRow = React.createClass({
     render: function() {
         var item = this.props.part;
         return (
-            <div className="forecast-full__weather__item" style={{"background-color": item.color}}>
+            <div className="forecast-full__weather__item" style={{"backgroundColor": item.color}}>
                 <div className="forecast-full__weather__degree">
                     <div className="forecast-full__title">{timeOfDay[item.type]}</div>
                     <div>{item.temp_min}&hellip;{item.temp_max}</div>
