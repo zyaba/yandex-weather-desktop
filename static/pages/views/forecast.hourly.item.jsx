@@ -5,7 +5,9 @@ ForecastHourlyItem = React.createClass({
         var hour = this.props.hour,
             max = this.props.max,
             min = this.props.min,
-            height = Math.abs(hour.temp*50/(Math.max(Math.abs(max), Math.abs(min)) + 2)),
+            half = this.props.half,
+            maxHeight = half?50:100,
+            height = Math.abs(hour.temp*maxHeight/(Math.max(Math.abs(max), Math.abs(min)) + 2)),
             style = {
               height: height +'%',
               background: hour.color
