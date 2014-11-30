@@ -9,15 +9,17 @@ var GeoAPI = (function () {
                     if (position && position.coords) {
                         $.get( "/locality", { latitude: position.coords.latitude, longitude: position.coords.longitude}).done(function( data ) {
                             promise.resolve(data.geoid);
-                        }).fail(function(error) {promise.reject(error)});
+                        }).fail(function(error) {promise.resolve(213);});
+                    } else {
+                        promise.resolve(213);
                     }
 
                 }, function(error) {
-                    promise.resolve(1);
+                    promise.resolve(213);
                 });
 
             } else {
-                promise.resolve(1);
+                promise.resolve(213);
             };
             
             return promise.promise();
