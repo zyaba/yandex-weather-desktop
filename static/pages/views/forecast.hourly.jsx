@@ -8,10 +8,12 @@ var ForecastHourly = React.createClass({
             max = this.props.max;
         
         return (            
+            <div role="tabpanel" className="tabs-panel fade" id="hourly">                
             <div className="forecast-hourly">                
                 {this.props.hours.map(function(object, i){
                     return <ForecastHourlyItem hour={object} min={min} max={max}/>;
                 })}
+            </div>
             </div>
         )
     }
