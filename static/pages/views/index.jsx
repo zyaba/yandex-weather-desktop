@@ -10,20 +10,20 @@ var DefaultLayout = require('../layouts/default/main'),
 
 var Index = React.createClass({
     render: function() {
-        return (
-            <DefaultLayout title={this.props.title} apiData={this.props.apiData}>
-                <Navigator></Navigator>
-                <ForecastToday apiData={this.props.apiData}></ForecastToday>
+        return (            
+            <DefaultLayout title={this.props.title} info={this.props.info}>
+                <Navigator city={this.props.info.name} ></Navigator>
+                <ForecastToday today={this.props.today}></ForecastToday>
                 <DetailsMenu></DetailsMenu>
-                <ForecastFull apiData={this.props.apiData}></ForecastFull>
-                <ForecastShort></ForecastShort>
+                <ForecastFull full={this.props.full}></ForecastFull>
+                <ForecastShort short={this.props.short}></ForecastShort>
                 <CityDropDown></CityDropDown>
                 
                 <div id="hint__forecast-base" className="hint" style={{"top": "198px", "left": "524px", "display": "none"}}>
                     <p className="hint__text">На основе прогноза</p>
                 </div>
 
-                <ForecastHourly></ForecastHourly>
+                <ForecastHourly hours={this.props.hourly.hours} min={this.props.hourly.min}  max={this.props.hourly.max}></ForecastHourly>
             </DefaultLayout>
         );
     }

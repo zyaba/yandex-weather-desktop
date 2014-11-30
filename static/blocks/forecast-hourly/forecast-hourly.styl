@@ -10,19 +10,18 @@
         position: relative;
         flex: 1;
         margin: 20px 1px 50px;
-        counter-increment: hour;                       
-        
-        &:before {
-            position: absolute;
-            left: 0;
-            display: block;
-            content: counter(hour, decimal-leading-zero) ":00";
-            bottom: -50px;
-            width: 100%;
-            font-size: 12px;
-            text-align: center;
-            color: #999;
-        }
+        counter-increment: hour;
+    }
+    &__hour {
+        position: absolute;
+        left: 0;
+        display: block;
+        content: counter(hour, decimal-leading-zero) ":00";
+        bottom: -50px;
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+        color: #999;
     }
     
     &__bar {

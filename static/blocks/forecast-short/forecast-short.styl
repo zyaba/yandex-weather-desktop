@@ -2,4 +2,57 @@
 	display: flex;
 	flex-flow: row;
 	clear: both;
+    min-width: 960px;
+    
+    &__day {
+        flex: 1;
+        
+        &_holiday {
+            .forecast-short__date {
+                color: #ff0000;
+            }
+            
+            +.forecast-short__day:not(.forecast-short__day_holiday) {
+                margin-left: 20px;
+            }
+        }
+        
+        &__body {
+            padding: 10px 10px 0;
+            height: 105px;
+            overflow: hidden;
+        }
+        
+        &__footer {
+            padding: 0 10px;
+            color: #6d6e6e;
+            font-size: 13px;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        &__icon {
+        }
+        &__precipitation {
+            font-size: 10px;
+            margin: 5px 0;
+            height: 35px;
+        }
+        &__degree {
+            font-size: 16px;
+        }
+    }
+    &__date {       
+        color: #000;
+        
+        &__weekday {
+            font-size: 22px;
+            line-height: 22px;
+        }
+        
+        &__monthday {
+            font-size: 13px;
+            line-height: 13px;
+        }
+    }
 }

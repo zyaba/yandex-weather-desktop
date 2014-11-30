@@ -10,11 +10,49 @@
         <script src="../static/blocks/GeoAPI/GeoAPI.js"></script>
         <script>
             GeoAPI.getGeoId().then(function(id) {
-                var id = id ? id : 1;
-                window.location = "/" + id;
+                window.location.href = "/" + id;
             });
         </script>
     </head>
-    <body>
+    <style type="text/css">
+        @keyframes loading {
+            0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+            50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}
+            100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+        }
+        @-webkit-keyframes loading {
+            0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+            50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}
+            100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+        }
+        .preloader {
+            background: #16a5ff;
+            position: relative;
+            height: 100%;
+            margin:0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 50px;
+            text-align: center;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .preloader-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin:  auto;
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            -webkit-animation: loading 2s linear infinite;
+            animation: loading 2s linear infinite;
+            font-weight: 300;
+        }
+    </style>
+    <body class="preloader">
+        <div class="preloader-text">Загрузка&hellip;</div>
     </body>
 </html>

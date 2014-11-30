@@ -5,10 +5,11 @@ var moment = require('moment'),
 
 ForecastFullItem = React.createClass({
     render: function () {
-        var date = moment( this.props.apiData.date );
+        var day = this.props.day,
+            date = moment( day.date );
         
         return (
-            <div className="forecast-full">
+            <div className={( (date.get('day') == 0 || date.get('day') == 6) ? 'forecast-full forecast-full_holiday': 'forecast-full' )}>
                 <div className="forecast-full__date">
                     <div className="forecast-full__date__weekday">{date.format('dd')}</div>
                     <div className="forecast-full__date__monthday">
@@ -18,7 +19,7 @@ ForecastFullItem = React.createClass({
                 </div>
                 <div className="forecast-full__weather">
                 {(function( scope ){
-                    if ( scope.props.day === 0 ) {
+                    if ( scope.props.item === 0 ) {
                         return <div className="forecast-full__weather__header">
                             <div className="forecast-full__weather__degree"></div>
                             <div className="forecast-full__weather__precipitation"></div>
@@ -39,27 +40,28 @@ ForecastFullItem = React.createClass({
                     }
                 })( this )}
                     
-                    {this.props.apiData.parts.map(function(object, i){
+                    {day.parts.map(function(object, i){
                         // morning, day, evening, night
+                        // todo не возвращать больше 4х
                         if ( i < 4 ) {
-                            return <ForecastFullItemItem apiData={object} />;
+                            return <ForecastFullItemItem part={object} />;
                         }
                     })}
                 </div>
                 <div className="forecast-full__sunrise">
                     <div className="forecast-full__title">восход</div>
-                    <div>{this.props.apiData.sunrise}</div>
+                    <div>{day.sunrise}</div>
                 </div>
                 <div className="forecast-full__sunset">
                     <div className="forecast-full__title">заход</div>
-                    <div>{this.props.apiData.sunset}</div>
+                    <div>{day.sunset}</div>
                 </div>
                 <div className="forecast-full__moon">
-                    <img className="forecast-full__moon__icon" src={"http://ekb.shri14.ru/icons/icon_moon_" + this.props.apiData.moon_code + ".svg"} width="24" height="24" alt="Убывающая луна" title="Убывающая луна" />
+                    <img className="forecast-full__moon__icon" src={"http://ekb.shri14.ru/icons/icon_moon_" + day.moon_code + ".svg"} width="24" height="24" alt="Убывающая луна" title="Убывающая луна" />
                 </div>
                 <div className="forecast-full__magnetic">
                     <div className="forecast-full__title">магнитное поле:</div>
-                    <div>{( this.props.apiData.biomet ? this.props.apiData.biomet.message: 'нет данных' )}</div>
+                    <div>{( day.biomet ? day.biomet.message: 'нет данных' )}</div>
                 </div>
             </div>
         );
