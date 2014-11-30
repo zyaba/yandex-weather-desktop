@@ -10,15 +10,21 @@ module.exports = function (req, res) {
         var short = [];
         result.forecast.map(function (object, i) {
             if (i < 10) {
-                var day = object.parts[0];
+                var day = object.parts.filter(function(object, i){
+                    return object.type == "day_short";
+                })[0];
+                var night = object.parts.filter(function(object, i){
+                    return object.type == "night_short";
+                })[0];
+                
                 short[short.length] = {
                     date: object.date,
                     weather: day.weather,
                     weather_icon: day.weather_icon,
-                    temp_max: day.temp_max,
-                    temp_min: day.temp_min,
-                    color_max: colorsConfig[day.temp_max],
-                    color_min: colorsConfig[day.temp_min]
+                    temp_max: day.temp,
+                    temp_min: night.temp,
+                    color_max: colorsConfig[day.temp],
+                    color_min: colorsConfig[night.temp]
                 };
             }
         });
