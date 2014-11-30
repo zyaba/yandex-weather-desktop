@@ -1,11 +1,13 @@
 /** @jsx React.DOM */
+var timeOfDay = require('../../../server/locales/timeofday.locale.js');
+
 var ForecastFullItemRow = React.createClass({
     render: function() {
         var item = this.props.part;
         return (
             <div className="forecast-full__weather__item" style={{"background-color": item.color}}>
                 <div className="forecast-full__weather__degree">
-                    <div className="forecast-full__title">утром</div>
+                    <div className="forecast-full__title">{timeOfDay[item.type]}</div>
                     <div>{item.temp_min}&hellip;{item.temp_max}</div>
                 </div>
                 <div className="forecast-full__weather__precipitation">

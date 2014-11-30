@@ -11,7 +11,7 @@ app.set('view engine', 'jsx');
 
 app.engine('jsx', require('express-react-views').createEngine());
 
-var routes = require('./routes');
+var routes = require('./routes/main.router');
 
 app.get('/', routes.index);
 app.get('/suggest', routes.suggest );

@@ -1,4 +1,4 @@
-var colors = {
+module.exports = {
     "-60": "#519fdd",
     "-59": "#56a2dd",
     "-58": "#56a2dd",
@@ -120,6 +120,4 @@ var colors = {
     "+58": "#fec24c",
     "+59": "#ffc045",
     "+60": "#ffc045"
-}
-
-module.exports = colors;
+};

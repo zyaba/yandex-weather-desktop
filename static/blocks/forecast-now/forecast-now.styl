@@ -1,108 +1,109 @@
 @import '../design.styl';
 
 .forecast-navigator {
-	font-family: $font-family;
-	
-	&__city {
-		font-size: 22px;
-		font-weight: 400;
-		display: inline-block;
-	}
+    font-family: $font-family;
+    
+    &__city {
+        font-size: 22px;
+        font-weight: 400;
+        display: inline-block;
+    }
 }
 
 .weather-main {
-	position: relative;
-	overflow: hidden;
-	margin-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
 
-	&__container {
-		width: 70px;
-		float: left;
-	}
+    &__container {
+        width: 70px;
+        float: left;
+    }
 
-	&__container:first-child {
-		width: 154px;
+    &__container:first-child {
+        width: 154px;
 
-		.weather-main__when {
-			font-size: 18px;
-			color: $main-text-color;
-			padding-left: 0;
-		}
+        .weather-main__when {
+            font-size: 18px;
+            color: $main-text-color;
+            padding-left: 0;
+        }
 
-		.weather-main__forecast {
-			background-image: none;
-		}
+        .weather-main__forecast {
+            background-image: none;
+        }
 
-		.weather-main__degree {
-			font-size: 27px;
-			line-height: 24px;
-		}
+        .weather-main__degree {
+            display: block;
+            font-size: 27px;
+            line-height: 24px;
+        }
 
-		.weather-main__icon {
-			width: 48px;
-			height: 48px;
-			display: inline-block;
-			vertical-align: top;
-		}
-	}
+        .weather-main__icon {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
 
-	&__when {
-		font-size: 13px;
-		color: $gray-text-color;
-		line-height: 24px;
-		padding-left: 10px;
-	}
+    &__when {
+        font-size: 13px;
+        color: $gray-text-color;
+        line-height: 24px;
+        padding-left: 10px;
+    }
 
-	&__forecast {
-		background-color: #fae5aa;
-		height: 99px;
-		padding: 10px;
-		box-sizing: border-box;
-		background-image: url('/dist/images/fade.png');
-		margin: 4px 0 8px;
-	}
+    &__forecast {
+        background-color: #fae5aa;
+        height: 99px;
+        padding: 10px;
+        box-sizing: border-box;
+        background-image: url('/dist/images/fade.png');
+        margin: 4px 0 8px;
+    }
 
-	&__degree {
-		font-size: 16px;
-		line-height: 31px;
-	}
+    &__degree {
+        font-size: 16px;
+        line-height: 31px;
+    }
 
-	&__icon {
-		background-image: url('http://ekb.shri14.ru/icons/bkn_d.svg');
-		width: 28px;
-		height: 28px;
-		background-size: cover;
-	}
+    &__icon {
+        background-image: url('http://ekb.shri14.ru/icons/bkn_d.svg');
+        width: 28px;
+        height: 28px;
+        background-size: cover;
+    }
 
-	&__condensation {
-		font-size: 11px;
-	}
+    &__condensation {
+        font-size: 11px;
+    }
 
-	&__additional {
-		font-size: 13px;
-		color: $gray-text-color;
-		float: left;
-		padding: 7px 15px;
-	}
+    &__additional {
+        font-size: 13px;
+        color: $gray-text-color;
+        float: left;
+        padding: 7px 15px;
+    }
 
-	&__line {
-		margin: 0;
-		line-height: 18px;
+    &__line {
+        margin: 0;
+        line-height: 18px;
 
-		&--margin-5-bottom {
-			@extend .weather-main__line;
-			margin-bottom: 5px;
-		}
-	}
+        &--margin-5-bottom {
+            @extend .weather-main__line;
+            margin-bottom: 5px;
+        }
+    }
 
-	&__line:last-of-type {
-		display: inline-block;
-		vertical-align: middle;
-	}
+    &__line:last-of-type {
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-	&__yesterday {
-		color: $gray-text-color;
-		font-size: 13px;
-		clear: both;
-	}
+    &__yesterday {
+        color: $gray-text-color;
+        font-size: 13px;
+        clear: both;
+    }
 }

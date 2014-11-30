@@ -5,10 +5,12 @@ var ForecastShortItem = require('./forecast.short.item'),
 var ForecastShort = React.createClass({
     render: function () {
         return (
+            <div role="tabpanel" className="tabs-panel fade in active" id="short">
             <div className="forecast-short">
                 {this.props.short.map(function(object, i){
                     return <ForecastShortItem day={object}/>;
                 })}
+            </div>
             </div>
         );
     }
