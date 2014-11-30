@@ -41,7 +41,7 @@ var ForecastToday = React.createClass({
                     <p className="weather-main__line">Влажность: {weatherToday.now.humidity}%</p>
                     <p className="weather-main__line--margin-5-bottom">Восход: {weatherToday.now.sunrise} Заход: {weatherToday.now.sunset}</p>
                     <p className="weather-main__line">Данные зарегистрированы недавно</p>
-                    <div className="tip"></div>
+                    <div className="tip" title="Здесь рыбы нет &copy;"></div>
                 </div>
                 <div className="weather-main__yesterday">
                 вчера {weatherToday.yesterday} °C
