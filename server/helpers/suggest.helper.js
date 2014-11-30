@@ -27,12 +27,6 @@ function suggest(q) {
 			});
 			temp(geoids).then(function(tempdata){
 				tempdata.forEach(function(d) {
-		    		if (d.temp > 0) {
-		    			d.temp = '+' + d.temp;
-		    		}
-		    		else {
-		    			d.temp = String(d.temp);
-		    		}
 					d.color = colors[d.temp];
 				});
 		    	deferred.resolve(tempdata); 
