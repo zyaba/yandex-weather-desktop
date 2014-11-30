@@ -15,8 +15,7 @@ var DefaultLayoutFooter = React.createClass({
                     <div className="footer-section footer__stats">
                     Прогноз погоды: Екатеринбург и еще 12268 городов в 229 странах
                         <br/>
-                    Данные предоставлены
-                        <a href="#">FORECA</a>
+                    Данные предоставлены&nbsp;<a href="#">FORECA</a>
                     </div>
                     <div className="footer-section footer__feedback-links">
                         <ul className="footer-section__links-list">
