@@ -9,11 +9,18 @@
         display: inline-block;
     }
 }
+    
+.today-weather-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .weather-main {
     position: relative;
     overflow: hidden;
     margin-bottom: 40px;
+    float: left;
 
     &__container {
         width: 70px;
@@ -105,4 +112,12 @@
         font-size: 13px;
         clear: both;
     }
+}
+
+.banner-wrapper {
+    background: url(https://quantization.files.wordpress.com/2010/12/homer-simpson-never-too-old-to-rock-black-t-shirt-2-812-p.jpg);
+    width: 300px;
+    height: 250px;
+    float: right;
+    background-size: cover;
 }
