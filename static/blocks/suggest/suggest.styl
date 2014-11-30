@@ -15,17 +15,19 @@
 	box-shadow: 0px 10px 36px 4px rgba(0, 0, 0, 0.41);
 }
 
-.tt-suggestion {
-	cursor: pounter;
+.tt-suggestion p {
+	position: relative;
 	cursor: pointer;
 	padding: 5px 16px;
-	margin-bottom: 1px;
+	margin: 0 0 1px 0;
 }
 
-.tt-suggestion:hover {
-	background-color: #bcd3ff;
+.tt-suggestion p:hover {
+	background-color: #bcd3ff !important;
 }
 
-.tt-suggestion p {
-	margin: 0;
+.tt-suggestion__span {
+	color: #999;
+	position: absolute;
+	right: 15px;
 }

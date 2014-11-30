@@ -20,7 +20,13 @@ $(function () {
 	},
 	{
 		source: dataSourse.ttAdapter(),
-		displayKey: 'name'
+		displayKey: 'name',
+        templates: {suggestion:function(data) 
+            {
+                return '<p style="background-color:' + data.color + '">' + data.name + '<span class="tt-suggestion__span">' + data.temp
+                 + '</span></p>'
+            }
+        }
 	});
     input.parents('form').on('submit', function(e) {
         e.preventDefault();
@@ -28,10 +34,7 @@ $(function () {
             location.pathname = '/' + geoid;
         }
     });
-    input.on('typeahead:selected', function(e, data) {
+    input.on('typeahead:selected typeahead:autocompleted', function(e, data) {
         geoid = data.geoid;
     });
-    input.on('typeahead:autocompleted', function(e, data) {
-        geoid = data.geoid;
-    })
 })
