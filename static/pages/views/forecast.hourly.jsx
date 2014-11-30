@@ -6,7 +6,7 @@ ForecastHourly = React.createClass({
     render: function() {
         var min = this.props.min,
             max = this.props.max,
-            half = !!this.props.half;
+            half = this.props.half;
         
         return (            
             <div role="tabpanel" className="tabs-panel fade" id="hourly">                
