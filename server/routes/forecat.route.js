@@ -76,7 +76,8 @@ module.exports = function (req, res) {
             hourly: {
                 hours: hours,
                 min: hours_min,
-                max: hours_max
+                max: hours_max,
+                half: !((hours_min >= 0 && hours_max >= 0) || (hours_min <= 0 && hours_max <= 0))
             }
         };
 

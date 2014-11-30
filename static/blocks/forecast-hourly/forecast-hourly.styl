@@ -29,11 +29,23 @@
         position: absolute;
     
         &_plus {
-            bottom: 50%;
+            bottom: 0;
         }
 
         &_minus {
-            top: 50%;               
+            top: 0;               
+        }
+    }
+    
+    &_half {
+        .forecast-hourly__bar {
+            &_plus {
+                bottom: 50%;
+            }
+
+            &_minus {
+                top: 50%;               
+            }
         }
     }
     

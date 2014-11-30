@@ -23,7 +23,7 @@ var Index = React.createClass({
                     <p className="hint__text">На основе прогноза</p>
                 </div>
 
-                <ForecastHourly hours={this.props.hourly.hours} min={this.props.hourly.min}  max={this.props.hourly.max}></ForecastHourly>
+                <ForecastHourly hours={this.props.hourly.hours} min={this.props.hourly.min} max={this.props.hourly.max} half={this.props.hourly.half}></ForecastHourly>
             </DefaultLayout>
         );
     }
