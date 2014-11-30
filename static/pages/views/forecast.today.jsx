@@ -8,7 +8,7 @@ var ForecastToday = React.createClass({
                 <div className="weather-main__container">
                     <span className="weather-main__when">сегодня</span>
                     <div className="weather-main__forecast" style={{"background-color": weatherToday.now.color}}>
-                        <span className="weather-main__degree">{weatherToday.now.temp} °C</span>
+                        <div className="weather-main__degree">{weatherToday.now.temp} °C</div>
                         <div className="weather-main__icon" style={{"background-image": "url(http://ekb.shri14.ru/icons/" + weatherToday.now.weather_icon + ".svg)"}}></div>
                         <span className="weather-main__condensation">{weatherToday.now.weather}</span>
                     </div>
@@ -40,7 +40,8 @@ var ForecastToday = React.createClass({
                     <p className="weather-main__line">Ветер: {weatherToday.now.wind}, {weatherToday.now.wind_speed} м/с ( ~ {weatherToday.now.wind_speed*3600/1000} км/ч)</p>
                     <p className="weather-main__line">Влажность: {weatherToday.now.humidity}%</p>
                     <p className="weather-main__line--margin-5-bottom">Восход: {weatherToday.now.sunrise} Заход: {weatherToday.now.sunset}</p>
-                    <p className="weather-main__line">Данные зарегистрированы недавно</p>&nbsp;<div className="tip"></div>
+                    <p className="weather-main__line">Данные зарегистрированы недавно</p>
+                    <div className="tip" title="Здесь рыбы нет &copy;"></div>
                 </div>
                 <div className="weather-main__yesterday">
                 вчера {weatherToday.yesterday} °C

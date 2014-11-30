@@ -2,7 +2,7 @@
 var CityDropdown = React.createClass({
     render: function() {
         return (
-            <div className="select select__dropdown" style={{"top": "58px", "left": "145px", "display": "none"}}>
+            <div className="select__dropdown" style={{"top": "118px", "left": "154px", "width": "185px", "display": "none"}}>
                 <p className="select__dropdown-title">Последние города</p>
                 <ul className="select__dropdown-list">
                     <li className="select__dropdown-item--active">
@@ -23,5 +23,3 @@ var CityDropdown = React.createClass({
 });
 
 module.exports = CityDropdown;
-
-
