@@ -93,6 +93,14 @@ module.exports = function (grunt) {
                 flatten: true
             }
         },
+        
+        uglify: {
+            clearBtn: {
+                files: {
+                    "dist/js/clear.btn.min.js": [ "static/blocks/layout/clear.btn.js" ]
+                }
+            }
+        },
 
         clean: ["dist/temp/", "!dist/images/"],
 
@@ -119,9 +127,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-shell");
 
-    grunt.registerTask("default", ["stylus", "autoprefixer", "cssmin", "copy", "clean"]);
+    grunt.registerTask("default", ["stylus", "autoprefixer", "cssmin", "copy", "clean", "uglify"]);
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-jscs");
