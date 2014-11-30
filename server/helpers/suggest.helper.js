@@ -3,6 +3,8 @@ var request = require('request'),
     suggestConfig = require('../configs/suggest.config.js'),
 	url = require('url'),
 	vow = require('vow');
+	temp = require('../helpers/factual.temp.helper.js'),
+	colors = require('../configs/colors.config.js');
 
 function suggest(q) {
 	var deferred = vow.defer();
@@ -17,8 +19,18 @@ function suggest(q) {
 		uri:uri,
 		json: true
 	}, function (error, response, data) {
+		//[{name, geoid}]
 		if (!error) {
-		    deferred.resolve(data);
+			data = data.slice(0,3);
+			var geoids = data.map(function(d) {
+				return d.geoid
+			});
+			temp(geoids).then(function(tempdata){
+				tempdata.forEach(function(d) {
+					d.color = colors[d.temp];
+				});
+		    	deferred.resolve(tempdata); 
+			});
 		} else {
 			deferred.reject();
 		}
