@@ -37,8 +37,8 @@ module.exports = function (grunt) {
                 reload: true
             },
             src: {
-                files: ["static/**/*.styl"],
-                tasks: ["default"],
+                files: ["static/**/*", "static/**/**/**/*"],
+                tasks: ["default", "express"],
             }
         },
 
@@ -80,8 +80,8 @@ module.exports = function (grunt) {
                 expand: true,
                 flatten: true
             },
-            tabsjs: {
-                src: "static/blocks/tabs/bootstrap.min.js",
+            js: {
+                src: ["static/scripts/*", "static/blocks/tabs/bootstrap.min.js"],
                 dest: "dist/js/",
                 expand: true,
                 flatten: true
