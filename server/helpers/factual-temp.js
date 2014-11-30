@@ -1,5 +1,5 @@
 var request = require('request'),
-	config = require('./config'),
+	urlsConfig = require('../configs/urls'),
 	url = require('url'),
 	vow = require('vow');
 
@@ -10,7 +10,7 @@ function getTemp(array) {
 
 	var uri = url.format({
 	    protocol: 'http',
-	    hostname: config.uri,
+	    hostname: urlsConfig.api,
 	    pathname: 'factual',
 	    query: {
 	        ids: array.join(',')

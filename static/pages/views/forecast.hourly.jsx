@@ -2,7 +2,7 @@
 var ForecastHourlyItem = require('./forecast.hourly.item'),
     ForecastHourly;
 
-var ForecastHourly = React.createClass({
+ForecastHourly = React.createClass({
     render: function() {
         var min = this.props.min,
             max = this.props.max;

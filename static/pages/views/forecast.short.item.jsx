@@ -1,14 +1,9 @@
 /** @jsx React.DOM */
 var moment = require('moment'),
+    momentLocales= require('../../../server/locales/moment.js'),
     ForecastShortItem;
 
-moment.locale('ru', {
-    months: [
-        "января", "февраля", "марта", "апреля", "мая", "июня", "июля",
-        "августа", "сентября", "октября", "ноября", "декабря"
-    ],
-    weekdaysMin: [ 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС' ] 
-});
+moment.locale( 'ru', momentLocales );
 
 ForecastShortItem = React.createClass({
     render: function () {

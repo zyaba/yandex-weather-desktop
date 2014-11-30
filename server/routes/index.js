@@ -1,14 +1,11 @@
-
-var apiTestData = require("../data.json");
-
-var locality = require('../locality.js'),
-	cities = require('../cities-list.js'),
-	provinces = require('../provinces-list.js'),
-	temp = require('../factual-temp.js'),
-	info = require('../locality-info.js'),
-	vow = require('vow'),
-	colors = require('../colors.js'),
-	extend = require('node.extend');
+var locality = require('../helpers/locality.js'),
+	cities = require('../helpers/cities-list.js'),
+	provinces = require('../helpers/provinces-list.js'),
+	temp = require('../helpers/factual-temp.js'),
+	info = require('../helpers/locality-info.js'),
+	colorsConfig = require('../configs/colors.js'),
+	extend = require('node.extend'),
+    vow = require('vow');
 
 exports.index = function(req, res){
     var path = require('path');
@@ -18,7 +15,8 @@ exports.index = function(req, res){
 
 exports.locality = function(req, res){
 	var q = req.query;
-    require('../locality.js')([q.longitude, q.latitude]).then(function(data) { 
+    //require('../helpers/locality.js')([q.longitude, q.latitude]).then(
+    locality([q.longitude, q.latitude]).then(function(data) { 
     	res.json(data) 
     });
 };
@@ -41,15 +39,13 @@ exports.geoid = function(req, res){
 			temp,
 			info);
 	    res.render( __dirname + '/../../static/pages/views/index', {
-	        title: 'Yandex Weather ' + req.params.geoid,
-	        apiData: apiTestData
+	        title: 'Yandex Weather ' + req.params.geoid
 	    })
 	},
     function(error){
     	console.log('rejected', arguments)
     	res.render( __dirname + '/../../static/pages/views/index', {
-	        title: 'Yandex Weather ' + req.params.geoid,
-	        apiData: apiTestData
+	        title: 'Yandex Weather ' + req.params.geoid
 	    })
 	    });
 };
@@ -60,7 +56,7 @@ exports.forecast = function(req, res){
     
     info(geoid).then(function(result) {
         //Short view        
-        var short = []        
+        var short = [];     
         result.forecast.map(function(object, i){
             if ( i < 10 ) {
                 var day = object.parts[0];
@@ -70,27 +66,27 @@ exports.forecast = function(req, res){
                     weather_icon: day.weather_icon,
                     temp_max: day.temp_max,
                     temp_min: day.temp_min,
-                    color_max: colors[day.temp_max],
-                    color_min: colors[day.temp_min]
+                    color_max: colorsConfig[day.temp_max],
+                    color_min: colorsConfig[day.temp_min]
                 };
             }
-        })
+        });
         
         //Full view      
         result.forecast.map(function(object, i){            
             object.parts.map(function(object, i){
-                object.color = colors[object.temp];
+                object.color = colorsConfig[object.temp];
             })
-        })
+        });
         
         //Today view
         var todayParts = []        
         result.forecast[0].parts.map(function(object, i){
             if (object.type == "day" || object.type == "evening" || object.type == "night") {
-                object.color = colors[object.temp];
+                object.color = colorsConfig[object.temp];
                 todayParts[todayParts.length] = object;            
             }
-        })
+        });
         
         //Hourly view
         var hoursSource = (result.forecast[0].hours).concat(result.forecast[1].hours);        
@@ -106,9 +102,9 @@ exports.forecast = function(req, res){
             hours[hours.length] = {
                 temp: object.temp,
                 hour: object.hour,
-                color: colors[object.temp]
+                color: colorsConfig[object.temp]
             };
-        })
+        });
         
         
         var data = {
@@ -118,7 +114,7 @@ exports.forecast = function(req, res){
                 now: extend(true, result.fact, {                
                     sunrise: result.forecast[0].sunrise,
                     sunset: result.forecast[0].sunset,
-                    color: colors[result.fact.temp]
+                    color: colorsConfig[result.fact.temp]
                 }),
                 yesterday: result.yesterday.temp,
                 parts: todayParts
@@ -134,7 +130,7 @@ exports.forecast = function(req, res){
                 
         res.render( __dirname + '/../../static/pages/views/index', data)
         
-    })
+    });
     
     /*vow.all(
         //[ locality([q.longitude, q.latitude]),

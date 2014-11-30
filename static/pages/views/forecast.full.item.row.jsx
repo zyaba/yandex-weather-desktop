@@ -1,13 +1,9 @@
 /** @jsx React.DOM */
-var timeOfDay = {
-    morning: 'утром',
-    day: 'днем',
-    evening: 'вечером',
-    night: 'ночью'
-};
+var timeOfDay = require('../../../server/locales/timeofday.js');
 
 var ForecastFullItemRow = React.createClass({
     render: function() {
+        console.log(timeOfDay);
         var item = this.props.part;
         return (
             <div className="forecast-full__weather__item" style={{"background-color": item.color}}>
