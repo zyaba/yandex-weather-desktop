@@ -8,7 +8,6 @@ var DefaultLayoutHeader = React.createClass({
                     </a>
                 </div>
    
-                <script src="http://yastatic.net/jquery/2.1.1/jquery.js"></script>
                 <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
                 <script src="dist/js/suggest.js"></script>
                 <div className="header__section header__city-search-wrapper">

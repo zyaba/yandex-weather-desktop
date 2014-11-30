@@ -1,5 +1,5 @@
 var request = require('request'),
-    urlsConfig = require('../configs/urls.config'),
+	config = require('./config'),
 	url = require('url'),
 	vow = require('vow');
 
@@ -10,7 +10,7 @@ function suggest(q) {
 
 	var uri = url.format({
 	    protocol: 'http',
-	    hostname: urlsConfig.api,
+	    hostname: config.uri,
 	    pathname: 'suggest',
 	    query: q
 	});
