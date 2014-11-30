@@ -1,10 +1,5 @@
 /** @jsx React.DOM */
-var timeOfDay = {
-    morning: 'утром',
-    day: 'днем',
-    evening: 'вечером',
-    night: 'ночью'
-};
+var timeOfDay = require('../../../server/locales/timeofday.locale.js');
 
 var ForecastFullItemRow = React.createClass({
     render: function() {
