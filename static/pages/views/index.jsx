@@ -6,6 +6,7 @@ var DefaultLayout = require('../layouts/default/main'),
     ForecastShort = require('./forecast.short.jsx'),
     CityDropDown = require('./city.dropdown.jsx'),
     ForecastHourly = require('./forecast.hourly.jsx'),
+    ForecastMap = require('./forecast.map.jsx'),
     DetailsMenu = require('./details.menu.jsx');
 
 var Index = React.createClass({
@@ -24,6 +25,7 @@ var Index = React.createClass({
                 </div>
 
                 <ForecastHourly hours={this.props.hourly.hours} min={this.props.hourly.min} max={this.props.hourly.max} half={this.props.hourly.half}></ForecastHourly>
+                <ForecastMap info={this.props.info} now={this.props.today.now}></ForecastMap>
             </DefaultLayout>
         );
     }

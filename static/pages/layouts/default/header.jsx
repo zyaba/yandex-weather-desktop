@@ -7,9 +7,11 @@ var DefaultLayoutHeader = React.createClass({
                         <img src="http://yastatic.net/www/2.131/yaru/i/logo.png" alt="Яндекс" width="100" height="44"/>
                     </a>
                 </div>
-   
+
+                <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=initYandexMap" type="text/javascript"></script>
                 <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
                 <script src="dist/js/suggest.js"></script>
+                <script src="dist/js/map.js"></script>
                 <div className="header__section header__city-search-wrapper">
                     <form>
                         <div className="city-search__section-link-wrapper">

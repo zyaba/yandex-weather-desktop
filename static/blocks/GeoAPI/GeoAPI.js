@@ -22,7 +22,7 @@ var GeoAPI = (function () {
                                     weather.cities.map(function(object, i) {
                                         object.last = false;
                                         if (object.id == data.geoid) {object.last = true; inArray = true;}
-                                    })
+                                    });
                                     if (!inArray) {
                                         weather.cities.push({id: data.geoid, last: true})
                                     }
@@ -42,7 +42,7 @@ var GeoAPI = (function () {
 
                 } else {
                     promise.resolve(MOSCOW_ID);
-                };
+                }
             }
             
             return promise.promise();

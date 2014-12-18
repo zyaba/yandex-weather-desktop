@@ -28,6 +28,7 @@ function getGeoid(array) {
                   "name": "Москва"
                 }
             }
+
             deferred.resolve(data);
         } else {
             deferred.reject();
