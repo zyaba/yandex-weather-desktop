@@ -8,7 +8,7 @@ var DefaultLayoutHeader = React.createClass({
                     </a>
                 </div>
 
-                <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=initYandexMap" type="text/javascript"></script>
+                <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
                 <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
                 <script src="dist/js/suggest.js"></script>
                 <script src="dist/js/map.js"></script>
